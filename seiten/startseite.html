@@ -1,0 +1,417 @@
+<!-- 9-1.at · Landingpage Offener Brief
+     In WordPress als Block "Individuelles HTML" einfügen.
+     Nur zwei Stellen anpassen: ganz unten im Script bei KONFIG (endpoint und organisation). -->
+<div id="n9" lang="de">
+<!-- Vorschau-Text für WhatsApp und Co. (BeyondSEO nimmt die ersten Wörter der Seite). Unsichtbar. -->
+<p hidden aria-hidden="true">Für diese 9 Anliegen werden wir jetzt #zamhalten. Unterschreib den offenen Brief und sei am 9. Jänner dabei.</p>
+<style>
+body{overflow-x:clip}
+#n9{--rot:#c8102e;--rot-dunkel:#a30c25;--tinte:#1b1b1b;--grau:#5c5c5c;--papier:#faf7f4;--linie:#e3dbd5;
+  position:relative!important;width:100vw!important;max-width:100vw!important;left:calc(50% - 50vw)!important;right:auto!important;margin:0!important;padding:0!important;
+  font-family:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--tinte);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;text-align:left}
+#n9 *{box-sizing:border-box}
+#n9 h1,#n9 h2,#n9 h3,#n9 p,#n9 ul,#n9 ol,#n9 form,#n9 fieldset,#n9 legend{margin:0;padding:0;border:0;font-family:inherit}
+#n9 a{color:inherit}
+#n9 .n9-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Testmodus-Hinweis */
+#n9 .n9-test{display:none;background:#1b1b1b;color:#fff;font-size:14px;padding:10px 0}
+#n9 .n9-test.zeigen{display:block}
+#n9 .n9-test b{border:1px solid #fff;border-radius:3px;padding:2px 8px;margin-right:10px;font-size:12px;letter-spacing:.08em}
+
+/* Kopfbereich */
+#n9 .n9-hero{background:var(--rot);color:#fff;padding:56px 0 72px}
+#n9 .n9-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:start}
+#n9 .n9-eyebrow{font-size:15px;opacity:.92;margin-bottom:18px}
+#n9 h1{font-size:clamp(42px,6.2vw,76px);line-height:1.02;font-weight:800;letter-spacing:-.03em;margin-bottom:30px;color:#fff}
+#n9 .n9-grid>div:first-child{container-type:inline-size;min-width:0}
+#n9 h1.n9-gross{display:flex;align-items:center;gap:0;font-size:clamp(30px,4.3vw,70px);font-size:clamp(28px,calc(100cqi / 9.8),78px)}
+/* Großer Neuner: Oswald SemiBold, nur das Zeichen 9. Copyright 2016 The Oswald Project Authors, SIL Open Font License 1.1 */
+@font-face{font-family:'N9 Oswald';src:url(data:font/woff;base64,d09GRgABAAAAAATAAA8AAAAABZgABBpeAAAAAAAAAAAAAAAAAAAAAAAAAABHUE9TAAAETAAAACAAAAAgRHZMdUdTVUIAAARsAAAAKQAAACq4+rj0T1MvMgAAAcgAAABFAAAAYIssfPVTVEFUAAAEmAAAACcAAAAqeZRq5WNtYXAAAAIYAAAAKQAAADQADACMZ2FzcAAABEQAAAAIAAAACAAAABBnbHlmAAACVAAAAL4AAAC+i6QBxmhlYWQAAAFYAAAANgAAADYeees+aGhlYQAAAZAAAAAgAAAAJAcdAbdobXR4AAACEAAAAAgAAAAIBLAAfGxvY2EAAAJMAAAABgAAAAYAXwAUbWF4cAAAAbAAAAAWAAAAIAAFADVuYW1lAAADFAAAARwAAAISMFhKwHBvc3QAAAQwAAAAEwAAACD/nwAycHJlcAAAAkQAAAAHAAAAB2gGjIUAAQAAAAQaXkqyVAtfDzz1AAMD6AAAAADV6qBlAAAAAOcC7G8AKP/1AkoDNAAAAAYAAgAAAAAAAHicY2BkYGBZ+e8+AwPTPAYNBnMmLwagCApgAgBpuwPaeJxjYGRgYGBiMAFiEGBkQAMABcgAOwAAeJxjYGH8zRTBwMrAwNQFpBkYvCE0YxyDEWM0AypgRObkpZaXMBxgsGSwZFn57z4DA6suYyVMDZMTsxaQUmBgBgAfbAsgAAAAAp4AVAISACh4nGNgYGBiYGBgBmIRIMkIplkYFIA0CxCC+Jb//0PI/yfAfAYAUe8GlQAAALgB/4WwBI0AAAAAFABfAAAAAgBUAAACSgMqAAMABwAAcxEhESUhESFUAfb+cQEo/tgDKvzWWgJ2AAIAKP/1AdsDNAAjADMAAEUiJiY1NDQ1MxQWMzI2NjU1BgYHBiYmNTQ2NjMyFhYVERQGBgMyNjc1NCYmIyIGBhUUFhYBAktaKJIVJxgaCg42I0FOISphT01gLCReVhcdCAoaGRkaCQYZCy9dQwMGAzMyHkg9UxYYAQFBbkNTekRBdE7+2U9+SAGzGQyBHzQgIj4sKUAkAAB4nH2QwUrDQBiEv7WtUCginnvIUSnGxopYPVnBa0WlHsSD2jSppEaSVPHuA/gcPoBP4DN5drpZofEgy+7OzM7O/+8CTTJqmHoT+NAssaElVuIV1vh0uMYuXw7XafPtcIOR2XB4lbaJS2ygZd4cbrBu3jkh5YlXVZ0SEVPgKbNLwL7QpZRQ+5CcF25JGIudyZ3yoJN76z9mrj2WlsnnsWlzCuXmHLKjESl94Zhzh69bKTOrphqRUkMmQo/y5NKXq506fauinutGpLREPGNPmYF67nEkbyhXIbTs3/5zo/qe6tlIbPGOqa3sVdIj9VnYrhM5rqX69DV7Gr6yQp45oCNfV7/YFw+0Trj5t5srsd/fvxCeiQ1sjfEP9Y1RQ3icY2BmAIP/cxiMGLAAACqDAdEAAAEAAf//AA8AAQAAAAoAHAAeAAFERkxUAAgABAAAAAD//wAAAAAAAHicY2BkYGDgYlBj0GBgcnHzCWHgy0ksyWOQYGABijP8/88ABwBtlwVdAAAAeJxjYGRgZOAAYgYGETApw8BUnp5RAmIyMIFFGBhZmSIYGAAsBwJdAA==) format('woff');font-weight:600;font-display:block}
+#n9 .n9-neun{display:block;flex:0 0 auto;font-family:'N9 Oswald',Oswald,'Arial Narrow',Arial,sans-serif;font-weight:600;font-size:3.38em;line-height:.86;letter-spacing:0;margin-left:-.04em;margin-right:.09em;position:relative;top:-.045em}
+#n9 .n9-zeilen{display:flex;flex-direction:column;min-width:0}
+#n9 .n9-lead{font-size:19px;max-width:580px;margin-bottom:30px}
+#n9 .n9-zahl{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-top:1px solid rgba(255,255,255,.35);padding-top:24px;max-width:580px}
+#n9 .n9-zahl strong{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1}
+#n9 .n9-ziel{max-width:580px;margin-top:16px}
+#n9 .n9-balken{height:8px;background:rgba(255,255,255,.25);border-radius:4px;overflow:hidden}
+#n9 .n9-balken span{display:block;height:100%;width:0;background:#fff;border-radius:4px;transition:width 1.2s ease}
+#n9 .n9-ziel small{display:block;font-size:14px;margin-top:8px;opacity:.9}
+#n9 .n9-datum{margin-top:24px;font-size:16px}
+#n9 .n9-datum b{font-weight:700}
+#n9 .n9-knoepfe-kopf{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+#n9 .n9-lesen{display:inline-block;padding:12px 22px;border:2px solid #fff;border-radius:4px;font-weight:700;text-decoration:none;color:#fff}
+#n9 .n9-lesen:hover{background:#fff;color:var(--rot)}
+
+/* Formular-Karte */
+#n9 .n9-karte{background:#fff;color:var(--tinte);border-radius:6px;padding:30px 26px;box-shadow:0 12px 32px rgba(0,0,0,.2);scroll-margin-top:20px}
+#n9 .n9-karte h2{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.01em;margin-bottom:4px;color:var(--tinte)}
+#n9 .n9-klein{font-size:14px;color:var(--grau)}
+#n9 .n9-feld{margin-top:16px}
+#n9 .n9-reihe{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:12px}
+#n9 .n9-l{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+#n9 input[type=text],#n9 input[type=email],#n9 input[type=tel]{width:100%;height:46px;border:1px solid #cbc3bd;border-radius:4px;padding:0 12px;font-family:inherit;font-size:16px;background:#fff;color:var(--tinte);box-shadow:none;margin:0}
+#n9 input[type=text]:focus,#n9 input[type=email]:focus,#n9 input[type=tel]:focus{outline:2px solid var(--rot);outline-offset:1px;border-color:var(--rot)}
+#n9 .n9-check{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:15px;line-height:1.4;cursor:pointer;font-weight:400}
+#n9 .n9-check input{width:20px;height:20px;flex:0 0 20px;margin:1px 0 0;accent-color:var(--rot)}
+#n9 .n9-check b{font-weight:700}
+#n9 .n9-btn{display:block;width:100%;margin-top:22px;height:54px;border:0;border-radius:4px;background:var(--rot);color:#fff;font-family:inherit;font-size:18px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;line-height:54px;padding:0}
+#n9 .n9-btn:hover{background:var(--rot-dunkel)}
+#n9 .n9-btn[disabled]{opacity:.6;cursor:wait}
+#n9 .n9-hinweis{font-size:12.5px;color:var(--grau);line-height:1.45;margin-top:14px}
+#n9 .n9-fehler{display:none;margin-top:14px;padding:10px 12px;border-radius:4px;background:#fdecee;color:var(--rot-dunkel);font-size:14px;font-weight:600}
+#n9 .n9-fehler.zeigen{display:block}
+#n9 .n9-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+
+/* Formular: Auswahl, Schritte, Umschalter */
+#n9 .n9-ic{width:22px;height:22px;flex:0 0 22px;display:block}
+#n9 .n9-wahl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#n9 .n9-wahl label{position:relative;cursor:pointer;margin:0}
+#n9 .n9-wahl input,#n9 .n9-tabs input,#n9 .n9-reich input{position:absolute;opacity:0;width:1px;height:1px}
+#n9 .n9-wahl span{display:flex;align-items:center;gap:9px;min-height:46px;border:1.5px solid #d9d1cb;border-radius:6px;padding:8px 32px 8px 10px;font-size:14px;font-weight:700;line-height:1.2;color:var(--grau);background:#fff;position:relative;user-select:none;transition:background .15s,border-color .15s,color .15s}
+#n9 .n9-wahl em{font-style:normal;min-width:0;hyphens:manual}
+#n9 .n9-wahl span::after{content:"";position:absolute;right:10px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;border:1.5px solid #cbc3bd;background:#fff}
+#n9 .n9-wahl input:checked+span{border-color:var(--rot);background:#fdf0f2;color:var(--tinte)}
+#n9 .n9-wahl input:checked+span .n9-ic{color:var(--rot)}
+#n9 .n9-wahl input:checked+span::after{border-color:var(--rot);background:var(--rot) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+#n9 .n9-wahl input:focus-visible+span,#n9 .n9-tabs input:focus-visible+span,#n9 .n9-reich input:focus-visible+span{outline:2px solid var(--rot);outline-offset:2px}
+#n9 .n9-wahl-info{font-size:14px;color:var(--grau);margin-top:10px;min-height:20px}
+#n9 .n9-wahl-info button{background:none;border:0;padding:0;font:inherit;color:var(--rot);font-weight:700;text-decoration:underline;cursor:pointer}
+#n9 .n9-wahl-info.warn{color:var(--rot-dunkel);font-weight:700}
+#n9 .n9-btn:disabled{background:#d9a3ac;cursor:not-allowed}
+#n9 .n9-mitte{text-align:center;margin-top:10px}
+#n9 .n9-zurueck{background:none;border:0;padding:0;margin-bottom:12px;font-family:inherit;font-size:14px;font-weight:700;color:var(--rot);cursor:pointer}
+#n9 .n9-zurueck:hover{text-decoration:underline}
+#n9 .n9-tabs{display:grid;grid-template-columns:1fr 1fr;background:#f1ece8;border-radius:6px;padding:4px;gap:4px}
+#n9 .n9-tabs label{margin:0;cursor:pointer;position:relative}
+#n9 .n9-tabs span{display:block;text-align:center;padding:9px 6px;border-radius:4px;font-size:14px;font-weight:700;color:var(--grau)}
+#n9 .n9-tabs input:checked+span{background:#fff;color:var(--tinte);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+#n9 .n9-reich{display:grid;gap:8px}
+#n9 .n9-reich label{margin:0;cursor:pointer;position:relative}
+#n9 .n9-reich span{display:block;border:1.5px solid #d9d1cb;border-radius:6px;padding:9px 12px 9px 38px;position:relative;line-height:1.3}
+#n9 .n9-reich span::before{content:"";position:absolute;left:12px;top:12px;width:16px;height:16px;border-radius:50%;border:1.5px solid #cbc3bd;background:#fff}
+#n9 .n9-reich b{display:block;font-size:15px}
+#n9 .n9-reich small{display:block;font-size:13px;color:var(--grau)}
+#n9 .n9-reich input:checked+span{border-color:var(--rot);background:#fdf0f2}
+#n9 .n9-reich input:checked+span::before{border-color:var(--rot);background:radial-gradient(circle,#fff 0 3px,var(--rot) 3.5px)}
+#n9 .n9-unter{margin-top:18px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+#n9 .n9-zwei{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#n9 .n9-opt{font-weight:400;color:var(--grau)}
+#n9 [hidden]{display:none!important}
+
+/* Kacheln der Anliegen */
+#n9 .n9-kacheln{list-style:none;margin:8px auto 64px;padding:0;max-width:1100px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#n9 .n9-kacheln a{display:flex;flex-direction:column;gap:10px;height:100%;background:#fff;border:1px solid var(--linie);border-radius:8px;padding:22px 22px 24px;text-decoration:none;color:var(--tinte);transition:border-color .15s,transform .15s}
+#n9 .n9-kacheln a:hover{border-color:var(--rot);transform:translateY(-2px)}
+#n9 .n9-k-kopf{display:flex;align-items:center;gap:14px}
+#n9 .n9-k-kopf .n9-ic{width:30px;height:30px;flex:0 0 30px;color:var(--rot)}
+#n9 .n9-k-kopf b{font-size:18px;line-height:1.25;font-weight:800}
+#n9 .n9-k-text{font-size:15px;line-height:1.45;color:var(--grau)}
+@media (prefers-reduced-motion:reduce){#n9 .n9-kacheln a{transition:none}#n9 .n9-kacheln a:hover{transform:none}}
+@media (max-width:960px){#n9 .n9-kacheln{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){#n9 .n9-kacheln{grid-template-columns:minmax(0,1fr);gap:10px}#n9 .n9-kacheln a{padding:16px 18px}}
+@media (max-width:360px){#n9 .n9-zwei{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:961px){
+  #n9 .n9-karte{padding:28px 24px}
+  #n9 .n9-wahl{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  #n9 .n9-wahl span{flex-direction:column;align-items:flex-start;gap:6px;min-height:86px;padding:12px 10px 10px;font-size:13px;line-height:1.2}
+  #n9 .n9-wahl .n9-ic{width:24px;height:24px;flex-basis:auto}
+  #n9 .n9-wahl span::after{top:10px;right:8px;margin-top:0}
+}
+@media (max-width:520px){#n9 .n9-wahl{grid-template-columns:minmax(0,1fr);gap:6px}#n9 .n9-wahl span{min-height:42px}}
+
+/* Verhaltensregeln kurz */
+#n9 .n9-regeln{background:#fff;padding:72px 0 80px;border-top:1px solid var(--linie)}
+#n9 .n9-regeln h2{font-size:clamp(28px,3.6vw,38px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:32px;color:var(--tinte);text-wrap:balance}
+#n9 .n9-regel-liste{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px}
+#n9 .n9-regel-liste li{display:flex;flex-direction:column;gap:6px}
+#n9 .n9-regel-liste .n9-r-ic{width:34px;height:34px;flex:0 0 auto;color:var(--rot);margin-bottom:6px}
+#n9 .n9-regel-liste b{font-size:18px;font-weight:800}
+#n9 .n9-regel-liste span{font-size:15px;line-height:1.45;color:var(--grau)}
+#n9 .n9-mehr{display:inline-block;margin-top:36px;padding:12px 22px;border:2px solid var(--rot);border-radius:4px;color:var(--rot);font-weight:700;text-decoration:none}
+#n9 .n9-mehr:hover{background:var(--rot);color:#fff}
+@media (max-width:960px){#n9 .n9-regel-liste{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){#n9 .n9-regeln{padding:48px 0 56px}#n9 .n9-regel-liste{grid-template-columns:minmax(0,1fr);gap:20px}#n9 .n9-regel-liste li{display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:14px;row-gap:2px}#n9 .n9-regel-liste .n9-r-ic{grid-row:span 2;margin:0}}
+
+/* Danke */
+#n9 .n9-danke{display:none}
+#n9 .n9-danke.zeigen{display:block}
+#n9 .n9-danke p{margin-top:10px}
+#n9 .n9-teilen{display:grid;gap:8px;margin-top:18px}
+#n9 .n9-motiv{margin-top:20px;padding:18px 18px 16px;border-radius:6px;background:var(--rosa,#fdf0f2);border:1px solid #f1c7cf}
+#n9 .n9-motiv p{margin:0;font-size:15px;line-height:1.45}
+#n9 .n9-motiv .n9-motiv-titel{font-size:19px;font-weight:800;margin-bottom:4px}
+#n9 .n9-motiv .n9-motiv-btn{height:auto;line-height:1.3;padding:14px 16px;margin-top:14px;font-size:16px;background:#fff;color:var(--rot);border:2px solid var(--rot)}
+#n9 .n9-motiv .n9-motiv-btn:hover{background:var(--rot);color:#fff}
+#n9 .n9-motiv .n9-motiv-klein{font-size:13px;color:var(--grau);margin-top:8px}
+#n9 .n9-motiv .n9-motiv-fehler{font-size:14px;color:var(--rot-dunkel);font-weight:700;margin-top:8px}
+#n9 .n9-motiv .n9-motiv-ok{font-size:16px;margin-top:4px}
+#n9 .n9-motiv .n9-motiv-ok b{color:var(--rot)}
+#n9 .n9-region{margin-top:20px;padding-top:18px;border-top:1px solid var(--linie)}
+#n9 .n9-region p{margin:0;font-size:15px;line-height:1.45}
+#n9 .n9-region b{display:block;font-size:19px;font-weight:800;margin-bottom:2px}
+#n9 .n9-region .n9-btn{margin-top:14px;height:auto;line-height:1.3;padding:15px 16px}
+#n9 .n9-teilen a,#n9 .n9-teilen button{display:block;width:100%;padding:12px;border-radius:4px;border:2px solid var(--rot);background:#fff;color:var(--rot);font-family:inherit;font-size:16px;font-weight:700;text-align:center;text-decoration:none;cursor:pointer}
+#n9 .n9-teilen a.voll{background:var(--rot);color:#fff}
+#n9 .n9-ticker{margin-top:20px;padding-top:16px;border-top:1px solid var(--linie);font-size:14px}
+#n9 .n9-ticker a{font-weight:700;color:var(--rot)}
+
+/* Brief */
+#n9 .n9-brief{background:var(--papier);padding:80px 0 88px}
+#n9 .n9-text{max-width:740px;margin:0 auto}
+#n9 .n9-brief h2{text-align:left}
+#n9 .n9-marke{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);margin-bottom:10px}
+#n9 .n9-brief h2{font-size:clamp(30px,4vw,42px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:32px;color:var(--tinte)}
+#n9 .n9-text p{margin:0 0 16px}
+#n9 .n9-anrede{font-weight:700}
+#n9 .n9-text h3{font-size:24px;line-height:1.25;font-weight:800;margin:48px 0 14px;scroll-margin-top:20px;color:var(--tinte)}
+#n9 .n9-text h3{display:flex;align-items:flex-start;gap:12px}
+#n9 .n9-text h3 .n9-ic{width:32px;height:32px;flex:0 0 32px;color:var(--rot);margin-top:-1px}
+#n9 .n9-text p.n9-fordern{border-left:4px solid var(--rot);padding-left:16px;font-weight:600}
+#n9 .n9-schluss{margin-top:48px;padding-top:28px;border-top:2px solid var(--tinte)}
+#n9 .n9-schluss p{font-size:19px;font-weight:600}
+#n9 .n9-nochmal{max-width:360px;margin:32px auto 0}
+
+/* Fuß */
+#n9 .n9-fuss{background:var(--tinte);color:#ddd;padding:36px 0;font-size:14px}
+#n9 .n9-fuss .n9-wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+#n9 .n9-fuss a{color:#fff}
+
+@media (max-width:960px){
+  #n9 .n9-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  #n9 .n9-hero{padding:40px 0 48px}
+}
+@media (max-width:560px){
+  #n9 .n9-wrap{padding:0 16px}
+  #n9 .n9-karte{padding:24px 16px}
+    #n9 .n9-zahl strong{font-size:44px}
+  #n9 h1.n9-gross{font-size:clamp(24px,calc((100vw - 32px) / 10.6),44px);font-size:clamp(24px,calc(100cqi / 9.8),46px)}
+      }
+</style>
+
+<div class="n9-test" id="n9-test"></div>
+
+<section class="n9-hero">
+  <div class="n9-wrap n9-grid">
+    <div>
+      <p class="n9-eyebrow">Offener Brief an <b>Bundespräsident Alexander Van der Bellen</b></p>
+      <h1 class="n9-gross" aria-label="9 Anliegen. 9 Bundesländer. 9. Jänner."><span class="n9-neun" aria-hidden="true">9</span><span class="n9-zeilen" aria-hidden="true"><span>Anliegen.</span><span>Bundesländer.</span><span>Jänner.</span></span></h1>
+      <p class="n9-lead">Viele Menschen in Österreich fühlen sich mit Teuerung, Gesundheit und Hitze allein gelassen. Wir bitten den Bundespräsidenten, neun Anliegen auf die politische Agenda zu setzen. Am Samstag, 9.&nbsp;Jänner 2027, zeigen wir in ganz Österreich friedlich, dass wir zusammenhalten.</p>
+      <div class="n9-zahl" id="n9-zahl-block" hidden><strong id="n9-zahl">–</strong><span id="n9-zahl-text">haben unterschrieben</span></div>
+      <div class="n9-ziel" id="n9-ziel" hidden><div class="n9-balken"><span id="n9-balken"></span></div><small id="n9-ziel-text">Unser erstes Ziel: 9.000 Unterschriften bis Weihnachten</small></div>
+      <p class="n9-datum"><b>Samstag, 9. Jänner 2027</b> · <span id="n9-tage"></span> · #zamhalten</p>
+      <div class="n9-knoepfe-kopf"><a class="n9-lesen" href="#n9-brief">Den ganzen Brief lesen ↓</a><a class="n9-lesen" href="/karte">Was ist los in deiner Region? →</a></div>
+    </div>
+
+    <div class="n9-karte" id="n9-unterschreiben">
+      <form id="n9-form" novalidate>
+        <div id="n9-schritt1">
+          <h2>Brief unterschreiben</h2>
+          <fieldset class="n9-feld">
+            <legend class="n9-l">Diese Anliegen unterstütze ich:</legend>
+            <div class="n9-wahl">
+            <label><input type="checkbox" name="forderung" value="1" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><em>Wohnraum statt Leer&shy;raum</em></span></label>
+            <label><input type="checkbox" name="forderung" value="2" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></svg><em>Teurer Strom ade</em></span></label>
+            <label><input type="checkbox" name="forderung" value="3" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6 12 20l-7.5-7.4A4.8 4.8 0 0 1 12 6.3a4.8 4.8 0 0 1 7.5 6.3z"/><rect x="8.8" y="11.3" width="6.4" height="2.8" rx="1.2" transform="rotate(-40 12 12.7)"/></svg><em>Fairness in der Pflege</em></span></label>
+            <label><input type="checkbox" name="forderung" value="4" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3H4a1 1 0 0 0-1 1v5a5 5 0 0 0 10 0V4a1 1 0 0 0-1-1h-1"/><path d="M8 14v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="19" cy="11" r="2"/></svg><em>Medizin für alle</em></span></label>
+            <label><input type="checkbox" name="forderung" value="5" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.8V4.5a2 2 0 0 0-4 0v10.3a4 4 0 1 0 4 0z"/><path d="M12 9v7"/></svg><em>Hitze&shy;schutz</em></span></label>
+            <label><input type="checkbox" name="forderung" value="6" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M12 1.8v.8M5.8 8H5M19 8h-.8M7.6 3.6l.6.6M16.4 3.6l-.6.6"/><path d="M2 15.5h20"/><path d="M7 15.5l1.6 2.6L7.4 21M14.5 15.5l-1 2.2 2.2 3.3"/></svg><em>Dürre-Vorsorge</em></span></label>
+            <label><input type="checkbox" name="forderung" value="7" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="2.5"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M8 20v-1.5a4 4 0 0 1 8 0V20M1.5 19.5a3.5 3.5 0 0 1 5.6-2.8M22.5 19.5a3.5 3.5 0 0 0-5.6-2.8"/></svg><em>Menschen ernst nehmen</em></span></label>
+            <label><input type="checkbox" name="forderung" value="8" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4l13 4.5V5.5z"/><path d="M16 9a3 3 0 0 1 0 6M19 7a6 6 0 0 1 0 10"/><path d="M6 15l1.5 5h3l-1.2-4"/></svg><em>Mitsprache bei Rechen&shy;zentren</em></span></label>
+            <label><input type="checkbox" name="forderung" value="9" checked><span><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6L13.5 6h-3z"/><path d="M10.5 6h3C18 8.5 20 13 20 16a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5c0-3 2-7.5 6.5-10z"/><path d="M14 11.6c-.4-.6-1.1-1-2-1-1.1 0-2 .6-2 1.5s.9 1.3 2 1.5 2 .6 2 1.5-.9 1.5-2 1.5c-.9 0-1.6-.4-2-1M12 9.3v1.3M12 16.6v1.3"/></svg><em>Superreiche besteuern</em></span></label>
+            </div>
+          </fieldset>
+          <p class="n9-wahl-info" id="n9-wahl-info" aria-live="polite"></p>
+          <button class="n9-btn" type="button" id="n9-weiter">Brief unterschreiben</button>
+          <p class="n9-klein n9-mitte">Im nächsten Schritt: Ihr Name und Ihre E-Mail. Dauert 30 Sekunden.</p>
+        </div>
+
+        <div id="n9-schritt2" hidden>
+          <button type="button" class="n9-zurueck" id="n9-zurueck">← Anliegen ändern</button>
+          <h2>Fast geschafft</h2>
+          <p class="n9-klein" id="n9-auswahl-text"></p>
+
+          <fieldset class="n9-feld">
+            <legend class="n9-l">Ich unterschreibe</legend>
+            <div class="n9-tabs">
+              <label><input type="radio" name="typ" value="Person" checked><span>als Privatperson</span></label>
+              <label><input type="radio" name="typ" value="Organisation"><span>für eine Organisation</span></label>
+            </div>
+          </fieldset>
+
+          <div class="n9-nur-orga" hidden>
+            <div class="n9-feld"><label class="n9-l" for="n9-orgname">Name der Organisation</label><input type="text" id="n9-orgname" name="orgname" maxlength="120" autocomplete="organization"></div>
+            <fieldset class="n9-feld">
+              <legend class="n9-l">Wo ist die Organisation tätig?</legend>
+              <div class="n9-reich">
+                <label title="Die Organisation ist in einer Gemeinde oder in einzelnen Bundesländern tätig."><input type="radio" name="reichweite" value="Lokal"><span><b>Lokal</b><small>in einer Gemeinde oder einzelnen Bundesländern</small></span></label>
+                <label title="Die Organisation ist in ganz Österreich tätig."><input type="radio" name="reichweite" value="National"><span><b>National</b><small>in ganz Österreich</small></span></label>
+                <label title="Die Organisation ist in Österreich und in anderen Ländern tätig."><input type="radio" name="reichweite" value="International"><span><b>International</b><small>in Österreich und weiteren Ländern</small></span></label>
+              </div>
+            </fieldset>
+            <p class="n9-unter">Kontaktperson</p>
+          </div>
+
+          <div class="n9-feld n9-zwei">
+            <div><label class="n9-l" for="n9-vorname">Vorname</label><input type="text" id="n9-vorname" name="vorname" autocomplete="given-name" maxlength="60"></div>
+            <div><label class="n9-l" for="n9-nachname">Nachname</label><input type="text" id="n9-nachname" name="nachname" autocomplete="family-name" maxlength="80"></div>
+          </div>
+          <div class="n9-feld"><label class="n9-l" for="n9-email">E-Mail</label><input type="email" id="n9-email" name="email" autocomplete="email" maxlength="120"></div>
+          <div class="n9-feld n9-reihe" id="n9-reihe-pt">
+            <div><label class="n9-l" for="n9-plz" id="n9-plz-label">PLZ</label><input type="text" id="n9-plz" name="plz" inputmode="numeric" autocomplete="postal-code" maxlength="4"></div>
+            <div><label class="n9-l" for="n9-telefon">Telefon <span class="n9-opt">(optional)</span></label><input type="tel" id="n9-telefon" name="telefon" autocomplete="tel" maxlength="30" placeholder="+43 …"></div>
+          </div>
+
+          <label class="n9-check n9-nur-person"><input type="checkbox" name="alter14" id="n9-alter14"><span><b>Ich bin mindestens 14 Jahre alt.</b></span></label>
+          <label class="n9-check n9-nur-orga" hidden><input type="checkbox" name="berechtigt" id="n9-berechtigt"><span><b>Ich darf im Namen dieser Organisation unterschreiben.</b></span></label>
+          <label class="n9-check"><input type="checkbox" name="optInfo" id="n9-optinfo"><span>Die Bewegung 9. Jänner darf mich über die weitere Kampagne informieren.</span></label>
+
+          <div class="n9-hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+          <button class="n9-btn" type="submit" id="n9-btn">Jetzt unterschreiben</button>
+          <p class="n9-fehler" id="n9-fehler" role="alert"></p>
+          <p class="n9-hinweis">Wir übergeben den Brief und die Unterschriften dem Bundespräsidenten: bei Privatpersonen Vorname und PLZ, bei Organisationen deren Namen. Kontaktdaten geben wir nicht weiter. Eine Unterschrift zeigt Ihre politische Meinung. Mit dem Klick willigen Sie ausdrücklich ein, dass <span class="org"></span> Ihre Angaben dafür verarbeitet (Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;a DSGVO). Wir speichern sie in einer Google-Tabelle. Nachrichten zur weiteren Kampagne bekommen Sie nur mit Haken oben. Widerruf jederzeit. <a href="/datenschutz">Datenschutz</a></p>
+        </div>
+      </form>
+
+      <div class="n9-danke" id="n9-danke" aria-live="polite">
+        <h2 id="n9-danke-titel">Danke!</h2>
+        <p id="n9-danke-text">Sie stehen jetzt mit drauf. Jetzt zählt jede weitere Person: Schicken Sie den Brief an zwei Menschen, die anders denken als Sie.</p>
+        <div class="n9-teilen">
+          <a class="voll" id="n9-wa" target="_blank" rel="noopener">Per WhatsApp teilen</a>
+          <a id="n9-tg" target="_blank" rel="noopener">Per Telegram teilen</a>
+          <button type="button" id="n9-kopieren">Link kopieren</button>
+        </div>
+        <p class="n9-ticker">Am Laufenden bleiben: <a href="https://chat.whatsapp.com/Ck0ArbnN0PN87qS8moi70S" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/BewegungDes9Jaenner" target="_blank" rel="noopener">Telegram</a> · <a href="https://signal.group/#CjQKIP5_sqANFQqLf_ESD3ggeAaeCGQrbHZT8nAgqr7vD08ZEhCgcW7wmrPPdGhnqIS52s_v" target="_blank" rel="noopener">Signal</a></p>
+        <div class="n9-motiv" id="n9-motiv">
+          <p class="n9-motiv-titel">Ihre Geschichte macht Mut</p>
+          <p>Warum haben Sie unterschrieben? Persönliche Beweggründe zeigen, dass hinter jeder Unterschrift ein Mensch steht. Das berührt und ermutigt andere, selbst mitzumachen.</p>
+          <button type="button" class="n9-btn n9-motiv-btn" id="n9-motiv-btn">Ich möchte meine persönliche Motivation auf 9-1.at teilen</button>
+          <p class="n9-motiv-klein">Wir melden uns bei Ihnen und besprechen alles Weitere. Veröffentlicht wird nur, was Sie freigeben.</p>
+          <p class="n9-motiv-fehler" id="n9-motiv-fehler" role="alert" hidden></p>
+          <p class="n9-motiv-ok" id="n9-motiv-ok" hidden><b>Danke!</b> Wir freuen uns sehr darauf und melden uns bei Ihnen.</p>
+        </div>
+        <div class="n9-region" id="n9-region" hidden>
+          <p id="n9-region-text">Auf der Karte sehen Sie, wo Events geplant sind.</p>
+          <a class="n9-btn" id="n9-zur-karte" href="/karte">Werde in deiner Region aktiv →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="n9-brief" id="n9-brief">
+  <div class="n9-wrap"><div class="n9-text">
+    <p class="n9-marke">Der offene Brief</p>
+    <h2>Heimat braucht Zusammenhalt.</h2>
+  </div>
+  <ul class="n9-kacheln">
+      <li><a href="#f1"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><b>Wohnraum statt Leerraum</b></span><span class="n9-k-text">Leerstand soll sich nicht mehr lohnen: Leerstandsabgabe in Höhe der Steuern auf eine ortsübliche Miete einführen, und Eigentümerinnen und Eigentümer dazu verpflichten, Leerstand zu melden.</span></a></li>
+      <li><a href="#f2"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></svg><b>Teurem Strom den Stecker ziehen</b></span><span class="n9-k-text">Für eine Berechnung der Strompreise auf Basis der tatsächlichen Erzeugungskosten anstelle des Merit-Order-Prinzips, und eine konsequente Abschöpfung der Übergewinne von Energieversorgern.</span></a></li>
+      <li><a href="#f3"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6 12 20l-7.5-7.4A4.8 4.8 0 0 1 12 6.3a4.8 4.8 0 0 1 7.5 6.3z"/><rect x="8.8" y="11.3" width="6.4" height="2.8" rx="1.2" transform="rotate(-40 12 12.7)"/></svg><b>Fairness in der Pflege</b></span><span class="n9-k-text">In der Pflege fehlt es an Personal. Zusätzlich denken viele Pflegekräfte wegen chronischer Überlastung ans Aufhören. Wir fordern faire Arbeitsbedingungen und faire Bezahlung!</span></a></li>
+      <li><a href="#f4"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3H4a1 1 0 0 0-1 1v5a5 5 0 0 0 10 0V4a1 1 0 0 0-1-1h-1"/><path d="M8 14v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="19" cy="11" r="2"/></svg><b>Medizin für alle</b></span><span class="n9-k-text">Gute medizinische Versorgung nicht nur für Privatversicherte: Kassenstellen aufstocken und attraktiver machen, und eine Transparenzdatenbank für durchschnittliche Wartezeiten schaffen!</span></a></li>
+      <li><a href="#f5"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.8V4.5a2 2 0 0 0-4 0v10.3a4 4 0 1 0 4 0z"/><path d="M12 9v7"/></svg><b>Menschen vor extremer Hitze schützen</b></span><span class="n9-k-text">Unsere Kindergärten, Schulen, Spitäler sowie Pflege- und Altenheime müssen dringend hitzefit gemacht werden, und es braucht verbindliche Belastungsgrenzen für die Arbeit im Freien.</span></a></li>
+      <li><a href="#f6"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M12 1.8v.8M5.8 8H5M19 8h-.8M7.6 3.6l.6.6M16.4 3.6l-.6.6"/><path d="M2 15.5h20"/><path d="M7 15.5l1.6 2.6L7.4 21M14.5 15.5l-1 2.2 2.2 3.3"/></svg><b>Dürre-Vorsorge statt Krisen&shy;management</b></span><span class="n9-k-text">Österreich braucht einen nationalen Dürre-Aktionsplan: Frühwarnsystem, Risikoanalyse, Vorbeugungs- und Anpassungsmaßnahmen sowie eine im Voraus überlegte Strategie zur Sicherung der Wasserversorgung.</span></a></li>
+      <li><a href="#f7"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="2.5"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M8 20v-1.5a4 4 0 0 1 8 0V20M1.5 19.5a3.5 3.5 0 0 1 5.6-2.8M22.5 19.5a3.5 3.5 0 0 0-5.6-2.8"/></svg><b>Menschen ernst nehmen</b></span><span class="n9-k-text">Ein geloster Rat hat 2022 auf Einladung der Politik Empfehlungen zur Klimapolitik ausgearbeitet. Nach dem Extremsommer 2026 ist es allerhöchste Zeit, dass der Nationalrat über jeden der 93 Vorschläge abstimmt.</span></a></li>
+      <li><a href="#f8"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4l13 4.5V5.5z"/><path d="M16 9a3 3 0 0 1 0 6M19 7a6 6 0 0 1 0 10"/><path d="M6 15l1.5 5h3l-1.2-4"/></svg><b>Mitsprache bei Mega-Rechen&shy;zentren</b></span><span class="n9-k-text">Mega-Rechenzentren nur im Einvernehmen mit der lokalen Bevölkerung, nach umfassender Prüfung und Offenlegung sämtlicher Auswirkungen. Alle Verträge zwischen Politik und Tech-Konzernen offenlegen!</span></a></li>
+      <li><a href="#f9"><span class="n9-k-kopf"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6L13.5 6h-3z"/><path d="M10.5 6h3C18 8.5 20 13 20 16a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5c0-3 2-7.5 6.5-10z"/><path d="M14 11.6c-.4-.6-1.1-1-2-1-1.1 0-2 .6-2 1.5s.9 1.3 2 1.5 2 .6 2 1.5-.9 1.5-2 1.5c-.9 0-1.6-.4-2-1M12 9.3v1.3M12 16.6v1.3"/></svg><b>Extremen Reichtum besteuern</b></span><span class="n9-k-text">Eine breite Mehrheit will, dass Superreiche mehr beitragen. Ein geloster Rat, also eine Art „Mini-Österreich“, soll in einem moderierten Prozess Vorschläge für einen gerechten Beitrag der Vermögendsten ausarbeiten.</span></a></li>
+  </ul>
+  <div class="n9-text">
+
+
+    <p class="n9-anrede">Sehr geehrter Herr Bundespräsident Van der Bellen,</p>
+    <p>Sie haben oft gesagt, dass Sie ein Präsident für alle Menschen sein wollen, die hier in Österreich leben. Sie sehen sich auch in der Tradition, mit allen politischen Institutionen und auch der Zivilgesellschaft zusammenzuarbeiten. Der gesellschaftliche Zusammenhalt war Ihnen immer besonders wichtig. „Heimat braucht Zusammenhalt“, um es in Ihren eigenen Worten auszudrücken.</p>
+    <p>Wir appellieren an Sie, weil wir eben diesen Zusammenhalt in Österreich gefährdet sehen. Viele Menschen haben nämlich das Gefühl, mit ihren Sorgen und Problemen von der Politik alleine gelassen zu werden. Es geht um die Teuerung und gestiegene Lebenskosten, den Zugang zur Gesundheitsversorgung, die immer extremeren Sommer, mangelnde Mitbestimmung und ungleich verteilte Lasten.</p>
+    <p>Wir sind uns bewusst, dass Sie als Bundespräsident keine Gesetze beschließen und keine Verordnungen erlassen. Sie können aber Ihr Amt nutzen, um die folgenden von einer breiten zivilgesellschaftlichen Koalition getragenen neun Anliegen auf die politische Agenda zu setzen:</p>
+
+    <h3 id="f1"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Wohnraum statt Leerraum</h3>
+    <p>Besonders in den Städten steigen die Mieten immer höher. Gleichzeitig war im Oktober 2021 in rund 650.000 Wohnungen (ca. 13&nbsp;% des Bestandes) niemand gemeldet. Wie viele dieser Wohnungen tatsächlich langfristig leer stehen, wissen wir nicht. Schätzungen dazu gehen weit auseinander. Ein einheitliches Register gibt es nicht.</p>
+    <p class="n9-fordern">Wir fordern, dass es künftig überall etwas kostet, mit leerstehenden Wohnungen und Häusern zu spekulieren. Setzen Sie sich als Präsident für die Einführung einer österreichweiten, einheitlichen Leerstandsabgabe in der Höhe der Steuern auf eine ortsübliche Miete ein – und für eine Verpflichtung für Eigentümerinnen und Eigentümer, Leerstand zu melden!</p>
+
+    <h3 id="f2"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></svg>Teurem Strom den Stecker ziehen</h3>
+    <p>Strom wird immer teurer – und das, obwohl in Österreich etwa 80&nbsp;% des Stroms aus erneuerbaren Quellen stammt. Der Grund dafür ist das Merit-Order-Prinzip: Das teuerste Kraftwerk am Netz bestimmt allein den Preis. Wenn sich die Kosten für Strom aus Gas (ca. 15–20&nbsp;% der Stromerzeugung) verdoppeln, verdoppelt sich also auch der Strompreis.</p>
+    <p>Energieversorger verdienen sich an unserer Stromrechnung eine goldene Nase – von 2022 bis 2025 kamen bei Verbund und Landesversorgern fast 10 Milliarden an Übergewinnen zusammen. Nicht einmal ein Zehntel davon floss in den vieldiskutierten „Energiekrisenbeitrag“.</p>
+    <p class="n9-fordern">Setzen Sie sich als Präsident für eine europaweite Abkehr vom absurd gewordenen Merit-Order-Prinzip ein, und für eine Berechnung der Strompreise auf Basis der tatsächlichen Erzeugungskosten! Fordern Sie gerade in Zeiten der Budgetkrise eine konsequentere Abschöpfung von Übergewinnen ein!</p>
+
+    <h3 id="f3"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6 12 20l-7.5-7.4A4.8 4.8 0 0 1 12 6.3a4.8 4.8 0 0 1 7.5 6.3z"/><rect x="8.8" y="11.3" width="6.4" height="2.8" rx="1.2" transform="rotate(-40 12 12.7)"/></svg>Fairness in der Pflege</h3>
+    <p>Bis 2050 fehlen Österreich knapp 200.000 Pflegekräfte. Bei gleichbleibender Rate an Neuausbildungen bleibt immer noch eine Lücke von 2.000–3.000 Absolventinnen und Absolventen im Jahr. Zusätzlich denkt von den Pflegekräften, die wir haben, fast die Hälfte wegen chronischer Überlastung ans Aufhören.</p>
+    <p class="n9-fordern">Applaus für Gesundheitspersonal ist nett, aber Applaus ändert nichts an der chronischen Überlastung – und zahlt keine Rechnungen. Nutzen Sie Ihr Amt als Bundespräsident, um faire Arbeitsbedingungen und faire Bezahlung für Pflegekräfte auf die Agenda zu setzen!</p>
+
+    <h3 id="f4"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3H4a1 1 0 0 0-1 1v5a5 5 0 0 0 10 0V4a1 1 0 0 0-1-1h-1"/><path d="M8 14v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="19" cy="11" r="2"/></svg>Medizin für alle</h3>
+    <p>Trotz alternder Bevölkerung und damit steigendem Bedarf für medizinische Versorgung ist die Zahl der Kassenärztinnen und -ärzte pro 10.000 Menschen seit 2006 um ca. 10&nbsp;% zurückgegangen. Es fehlt nicht an Medizinerinnen und Medizinern – das Angebot an Wahlärztinnen und -ärzten hat sich im gleichen Zeitraum um 55&nbsp;% erhöht. Wer es sich leisten kann, schließt eine Privatversicherung ab. Alle anderen müssen warten oder aus der eigenen Tasche zahlen. Gerecht ist das nicht.</p>
+    <p class="n9-fordern">Setzen Sie sich als Präsident dafür ein, die Zahl der Kassenstellen im Verhältnis zur Bevölkerung zumindest wieder auf das Niveau der 2000er-Jahre aufzustocken und die Arbeit im öffentlichen Gesundheitssystem für Ärztinnen und Ärzte attraktiver zu machen!</p>
+    <p class="n9-fordern">Fordern Sie eine Transparenzdatenbank für durchschnittliche Wartezeiten, etwa auf einen Facharzttermin oder auf eine Operation, nach spanischem Vorbild – aufgeschlüsselt unter anderem nach Fachgebiet, Dringlichkeit und dem Status als Kassen- oder Privatleistung! Wenn Privatpatientinnen und -patienten bei der Terminvergabe systematisch bevorzugt werden, dann hat die Öffentlichkeit ein Recht darauf, das zu erfahren.</p>
+
+    <h3 id="f5"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.8V4.5a2 2 0 0 0-4 0v10.3a4 4 0 1 0 4 0z"/><path d="M12 9v7"/></svg>Menschen vor extremer Hitze schützen</h3>
+    <p>Der Sommer 2026 war der heißeste der rund 260-jährigen Messgeschichte. Anfang August wurden in Wien-Stammersdorf 41&nbsp;°C gemessen. Das bleibt nicht ohne Folgen: Laut AGES-Schätzungen sind allein von Juni bis August dieses Jahres in Österreich 1.000 Menschen an den Folgen der extremen Hitze gestorben.</p>
+    <p class="n9-fordern">Die 2026 aufgestellten Rekorde werden aufgrund der treibhausgasbedingten Erderhitzung nicht lange halten: Nach dem Hitzesommer ist vor dem Hitzesommer. Fordern Sie von Nationalrat und Bundesregierung einen verbindlichen, finanziell abgesicherten Hitzeschutzplan, der rechtzeitig vor dem nächsten Sommer greift! Besonders Kindergärten, Schulen, Spitäler sowie Pflege- und Altenheime müssen dringend hitzefit gemacht werden, damit Innentemperaturen auch bei draußen über 40&nbsp;°C erträglich bleiben.</p>
+    <p class="n9-fordern">Die Anfang des Jahres erlassene Hitzeschutzverordnung zu Maßnahmen am Arbeitsplatz ist ein guter Anfang, geht aber nicht weit genug. Setzen Sie sich als Präsident für verbindliche, gesetzlich festgelegte Belastungsgrenzen ein, bei deren Überschreitung die Arbeit im Freien verpflichtend einzustellen ist!</p>
+
+    <h3 id="f6"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M12 1.8v.8M5.8 8H5M19 8h-.8M7.6 3.6l.6.6M16.4 3.6l-.6.6"/><path d="M2 15.5h20"/><path d="M7 15.5l1.6 2.6L7.4 21M14.5 15.5l-1 2.2 2.2 3.3"/></svg>Dürre-Vorsorge statt Krisenmanagement</h3>
+    <p>Die vergangenen zwölf Monate waren in Österreich die trockensten seit Beginn der Aufzeichnungen. Bereits im August stellte die Hagelversicherung Dürreschäden von einer Milliarde Euro in der Landwirtschaft fest. Die Getreideernte lag um etwa 20&nbsp;% unter dem Durchschnitt; beim Mais waren sogar Ernteausfälle von 35&nbsp;% zu beklagen. Auch andere Kulturen und insbesondere Grünland sind betroffen.</p>
+    <p class="n9-fordern">Setzen Sie sich als Präsident für einen nationalen Dürre-Aktionsplan nach den Empfehlungen der Weltorganisation für Meteorologie ein! Ein solcher Plan umfasst ein Monitoring des Wasserhaushalts samt Frühwarnsystem, die Analyse bestehender Risiken, Maßnahmen zur Vorbeugung und Anpassung sowie eine im Voraus überlegte Strategie, die Wasserversorgung von Mensch, Tier und Feld zu sichern.</p>
+
+    <h3 id="f7"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="2.5"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M8 20v-1.5a4 4 0 0 1 8 0V20M1.5 19.5a3.5 3.5 0 0 1 5.6-2.8M22.5 19.5a3.5 3.5 0 0 0-5.6-2.8"/></svg>Menschen ernst nehmen</h3>
+    <p>Ende 2021 beschloss der Nationalrat, einen Rat aus 100 zufällig ausgelosten Bürgerinnen und Bürgern einzuberufen. Im 1. Halbjahr 2022 arbeiteten diese Menschen in einem moderierten Prozess Vorschläge zur Klimapolitik aus. In einem zweiten Schritt war die ganze Bevölkerung eingeladen, sich an einer Online-Befragung zu diesen Vorschlägen zu beteiligen. Die Ergebnisse dieser Befragung wurden von diesem Gremium bei der Auswahl und Formulierung der letztendlich 93 Konsens-Empfehlungen berücksichtigt.</p>
+    <p>Was ein Musterbeispiel für demokratische Teilhabe hätte sein können, scheiterte am Unwillen der Politik. Ein Jahr danach waren von den 93 Empfehlungen gerade einmal 4 weitgehend umgesetzt. 29 weitere wurden stark verwässert; die überwiegende Mehrheit landete ohne jede Debatte und ohne jede Abstimmung im Nationalrat direkt in der Schublade.</p>
+    <p class="n9-fordern">Nutzen Sie Ihr Amt als Bundespräsident, um diese Empfehlungen nach dem Extremsommer 2026 wieder auf die Agenda zu setzen! Fordern Sie den Nationalrat auf, deliberative Demokratie ernst zu nehmen und über jeden der vom gelosten Rat empfohlenen Punkte wenigstens abzustimmen!</p>
+
+    <h3 id="f8"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4l13 4.5V5.5z"/><path d="M16 9a3 3 0 0 1 0 6M19 7a6 6 0 0 1 0 10"/><path d="M6 15l1.5 5h3l-1.2-4"/></svg>Mitsprache bei Mega-Rechenzentren</h3>
+    <p>In Kronstorf in Oberösterreich baut Google eines der größten Rechenzentren in Europa. Auf einer Fläche von 70 Fußballfeldern soll eine Anlage entstehen, die im Vollausbau laut Netzbetreiber so viel Strom verbrauchen könnte wie 900.000 Haushalte – zum Vergleich: In ganz Oberösterreich sind es ca. 680.000. In Irland, wo Rechenzentren bereits 22&nbsp;% der gesamten Elektrizität verbrauchen, sind die Strompreise für Privathaushalte spürbar gestiegen.</p>
+    <p>Rechenzentren stehen auch wegen ihres enormen Verbrauchs an Kühlwasser in der Kritik. Google plant, aus Brunnen nahe der Enns Grundwasser zu entnehmen, und darf laut Bewilligung täglich fast 6 Millionen Liter auf bis zu 30&nbsp;°C aufgeheiztes Wasser in die Enns einleiten – und das, obwohl die langfristigen Auswirkungen auf die Enns und den lokalen Wasserhaushalt noch nicht ausreichend untersucht sind.</p>
+    <p class="n9-fordern">Fordern Sie, dass Mega-Rechenzentren nur im Einvernehmen mit der lokalen Bevölkerung errichtet werden! Ein solches Einvernehmen kann nur nach umfassender Prüfung und Offenlegung sämtlicher Auswirkungen, etwa auf Stromversorgung, Wasserhaushalt, Gesundheit, Lärm und Umwelt, in einem offenen demokratischen Prozess erteilt werden. Verlangen Sie weiters, dass alle Verträge, Vereinbarungen und Absprachen zwischen Politik und Tech-Konzernen von Beginn jeder Projektentwicklung an bedingungslos offengelegt werden!</p>
+
+    <h3 id="f9"><svg class="n9-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6L13.5 6h-3z"/><path d="M10.5 6h3C18 8.5 20 13 20 16a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5c0-3 2-7.5 6.5-10z"/><path d="M14 11.6c-.4-.6-1.1-1-2-1-1.1 0-2 .6-2 1.5s.9 1.3 2 1.5 2 .6 2 1.5-.9 1.5-2 1.5c-.9 0-1.6-.4-2-1M12 9.3v1.3M12 16.6v1.3"/></svg>Extremen Reichtum und extreme Einkommen angemessen besteuern</h3>
+    <p>Das reichste Prozent besitzt in Österreich bis zu 50&nbsp;% des gesamten Nettovermögens. Die 2 reichsten Familien zusammengenommen besitzen mehr als die ärmere Hälfte der Bevölkerung! Trotzdem kamen 2024 nur 0,98&nbsp;% des Steuereinkommens aus vermögensbezogenen Abgaben (OECD-Schnitt: 4,9&nbsp;%).</p>
+    <p>Auch gemessen an ihrem Einkommen tragen Reiche und Superreiche eine geringere Steuerlast als der Rest der Bevölkerung. Während eine Familie aus der Mittelschicht (Brutto-Jahreseinkommen von 94.000&nbsp;€) ungefähr 42&nbsp;% ihres Einkommens an den Staat abführt, zahlt ein Multimillionär (Brutto-Jahreseinkommen von 1,5&nbsp;Mio.&nbsp;€) 30&nbsp;% – Mark Mateschitz, mit einem Vermögen von ca. 35 Milliarden € reichster Österreicher (Brutto-Jahreseinkommen von 1,3 Milliarden €), gar nur 26&nbsp;%.</p>
+    <p>Breite Mehrheiten in der Gesellschaft befürworten einen stärkeren Beitrag von Reichen und Superreichen. Wenn es um konkrete Vorschläge geht, herrscht aber schnell Uneinigkeit. Unser Vorschlag: Ein Menschenrat – also eine Art Mini-Österreich, zufällig gelost und ungefähr so zusammengesetzt wie die Gesamtbevölkerung – soll in einem moderierten Prozess Vorschläge ausarbeiten, wie ein gerechter Beitrag der Vermögendsten aussehen kann.</p>
+    <p class="n9-fordern">Unterstützen Sie als Bundespräsident aller Österreicherinnen und Österreicher dieses Anliegen und rufen Sie die Bundesregierung dazu auf, einen solchen gelosten Rat einzuberufen!</p>
+
+    <div class="n9-schluss">
+      <p>Lassen wir uns als Gesellschaft nicht spalten. Wir haben viel mehr gemeinsam, als uns trennt. Am 9. Jänner zeigen wir den Zusammenhalt hinter diesen 9 Anliegen in ganz Österreich friedlich auf den Straßen.</p>
+      <p>Als Bundespräsident aller Österreicherinnen und Österreicher sind Sie natürlich herzlichst eingeladen.</p>
+    </div>
+    <div class="n9-nochmal"><a class="n9-btn" href="#n9-unterschreiben">Ich stehe da auch drauf</a></div>
+  </div></div>
+</section>
+
+<section class="n9-regeln" id="n9-regeln">
+  <div class="n9-wrap">
+    <p class="n9-marke">Am 9. Jänner und bei allen Versammlungen</p>
+    <h2>So sind wir unterwegs</h2>
+    <ul class="n9-regel-liste">
+      <li><svg class="n9-ic n9-r-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M15.4 10.2 12 13.6l-3.4-3.4a1.9 1.9 0 0 1 3.4-1.2 1.9 1.9 0 0 1 3.4 1.2z"/></svg><b>Respektvoll</b><span>Auch mit Menschen, die ganz anders denken.</span></li>
+      <li><svg class="n9-ic n9-r-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><b>Mit Gesicht</b><span>Wir zeigen uns und vermummen uns nicht.</span></li>
+      <li><svg class="n9-ic n9-r-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1.3 7.5a3.8 3.8 0 0 1-7.4 0z"/><path d="M12 14.5V21M8.5 21h7"/><path d="M3 3l18 18"/></svg><b>Nüchtern</b><span>Kein Alkohol und keine Drogen.</span></li>
+      <li><svg class="n9-ic n9-r-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M12 12l-6.4 6.4M12 12l6.4 6.4"/></svg><b>Friedlich</b><span>Immer. Lässt sich etwas nicht beruhigen, gehen wir nach Hause.</span></li>
+      <li><svg class="n9-ic n9-r-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9.5 7V4h5v3M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg><b>Sauber</b><span>Wir hinterlassen jeden Ort mindestens so sauber, wie wir ihn vorgefunden haben.</span></li>
+    </ul>
+    <a class="n9-mehr" href="/verhaltensregeln">Alle Verhaltensregeln lesen →</a>
+  </div>
+</section>
+
+<footer class="n9-fuss">
+  <div class="n9-wrap">
+    <span>#zamhalten · 9-1.at</span>
+    <span><a href="https://chat.whatsapp.com/Ck0ArbnN0PN87qS8moi70S" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/BewegungDes9Jaenner" target="_blank" rel="noopener">Telegram</a> · <a href="https://signal.group/#CjQKIP5_sqANFQqLf_ESD3ggeAaeCGQrbHZT8nAgqr7vD08ZEhCgcW7wmrPPdGhnqIS52s_v" target="_blank" rel="noopener">Signal</a></span>
+    <span><a href="/karte">Karte</a> · <a href="/geschichten">Geschichten</a> · <a href="/verhaltensregeln">Verhaltensregeln</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+/* ======= HIER ANPASSEN ======= */
+window.N9_KONFIG = {
+  endpoint: 'https://script.google.com/macros/s/AKfycbwQ6HMwGShcyawXx7PvdBBLqFHuUSwjtWg2BCk-9tdJu105i9L6M4puHSNIpJ97zjpk/exec',
+  organisation: 'die Bewegung 9. Jänner',  // Name, der in den Einwilligungen steht
+  ziel: 9000,
+  zielText: 'Unser erstes Ziel: 9.000 Unterschriften bis Weihnachten',
+  zahlAnzeigenAb: 100,               // Zähler und Balken erscheinen erst ab dieser Zahl
+  termin: '2027-01-09T00:00:00+01:00',
+  seite: 'https://9-1.at',
+  karte: '/karte'                    // Adresse der Kartenseite in WordPress
+};
+/* ============================ */
+</script>
+<script>/* Programmcode, verpackt, damit WordPress ihn nicht verändert */(function(){var t=atob('CihmdW5jdGlvbiAoKSB7CiAgdmFyIEtPTkZJRyA9IHdpbmRvdy5OOV9LT05GSUc7CgogIHZhciByb290ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ245Jyk7CiAgZnVuY3Rpb24gJChpZCkgeyByZXR1cm4gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpOyB9CiAgZnVuY3Rpb24gYWxsZShzZWwpIHsgcmV0dXJuIEFycmF5LnByb3RvdHlwZS5zbGljZS5jYWxsKHJvb3QucXVlcnlTZWxlY3RvckFsbChzZWwpKTsgfQogIGFsbGUoJy5vcmcnKS5mb3JFYWNoKGZ1bmN0aW9uIChlKSB7IGUudGV4dENvbnRlbnQgPSBLT05GSUcub3JnYW5pc2F0aW9uOyB9KTsKCiAgLyogWsOkaGxlciAqLwogIGZ1bmN0aW9uIHB1bmt0KG4pIHsgcmV0dXJuIFN0cmluZyhuKS5yZXBsYWNlKC9cQig/PShcZHszfSkrKD8hXGQpKS9nLCAnLicpOyB9CiAgZnVuY3Rpb24gemVpZ2VaYWhsKG4sIG9yZ3MpIHsKICAgIHZhciBzaWNodGJhciA9IG4gPj0gS09ORklHLnphaGxBbnplaWdlbkFiOwogICAgJCgnbjktemFobC1ibG9jaycpLmhpZGRlbiA9ICFzaWNodGJhcjsKICAgICQoJ245LXppZWwnKS5oaWRkZW4gPSAhc2ljaHRiYXI7CiAgICBpZiAoc2ljaHRiYXIpIHsKICAgICAgJCgnbjktemFobCcpLnRleHRDb250ZW50ID0gcHVua3Qobik7CiAgICAgICQoJ245LXphaGwtdGV4dCcpLnRleHRDb250ZW50ID0gJ2hhYmVuIHVudGVyc2NocmllYmVuJyArCiAgICAgICAgKG9yZ3MgPiAwID8gJywgZGFydW50ZXIgJyArIHB1bmt0KG9yZ3MpICsgKG9yZ3MgPT09IDEgPyAnIE9yZ2FuaXNhdGlvbicgOiAnIE9yZ2FuaXNhdGlvbmVuJykgOiAnJyk7CiAgICB9CiAgICAkKCduOS1iYWxrZW4nKS5zdHlsZS53aWR0aCA9IE1hdGgubWluKDEwMCwgbiAvIEtPTkZJRy56aWVsICogMTAwKSArICclJzsKICB9CiAgJCgnbjktemllbC10ZXh0JykudGV4dENvbnRlbnQgPSBLT05GSUcuemllbFRleHQ7CgogIHZhciB0YWdlID0gTWF0aC5jZWlsKChuZXcgRGF0ZShLT05GSUcudGVybWluKSAtIG5ldyBEYXRlKCkpIC8gODY0ZTUpOwogICQoJ245LXRhZ2UnKS50ZXh0Q29udGVudCA9IHRhZ2UgPiAxID8gJ25vY2ggJyArIHRhZ2UgKyAnIFRhZ2UnIDogKHRhZ2UgPT09IDEgPyAnbW9yZ2VuJyA6ICdoZXV0ZScpOwoKICBpZiAoS09ORklHLmVuZHBvaW50KSB7CiAgICBmZXRjaChLT05GSUcuZW5kcG9pbnQpLnRoZW4oZnVuY3Rpb24gKHIpIHsgcmV0dXJuIHIuanNvbigpOyB9KQogICAgICAudGhlbihmdW5jdGlvbiAoZCkgeyBpZiAoZCAmJiBkLm9rKSB6ZWlnZVphaGwoZC5jb3VudCwgZC5vcmdzIHx8IDApOyB9KS5jYXRjaChmdW5jdGlvbiAoKSB7fSk7CiAgfSBlbHNlIHsKICAgICQoJ245LXRlc3QnKS5pbm5lckhUTUwgPSAnPGRpdiBjbGFzcz0ibjktd3JhcCI+PGI+VEVTVE1PRFVTPC9iPkRhcyBGb3JtdWxhciBpc3Qgbm9jaCBuaWNodCBtaXQgZGVyIFRhYmVsbGUgdmVyYnVuZGVuLiBFcyB3aXJkIG5pY2h0cyBnZXNwZWljaGVydC48L2Rpdj4nOwogICAgJCgnbjktdGVzdCcpLmNsYXNzTGlzdC5hZGQoJ3plaWdlbicpOwogICAgemVpZ2VaYWhsKDAsIDApOwogIH0KCiAgLy8gV29oZXIga29tbWVuIGRpZSBMZXV0ZT8gei4gQi4gOS0xLmF0Lz9xPWZseWVyCiAgdmFyIHAgPSBuZXcgVVJMU2VhcmNoUGFyYW1zKGxvY2F0aW9uLnNlYXJjaCk7CiAgdmFyIHF1ZWxsZSA9IHAuZ2V0KCdxJykgfHwgcC5nZXQoJ3V0bV9zb3VyY2UnKSB8fCAnJzsKICBpZiAoIXF1ZWxsZSAmJiBkb2N1bWVudC5yZWZlcnJlcikgeyB0cnkgeyBxdWVsbGUgPSBuZXcgVVJMKGRvY3VtZW50LnJlZmVycmVyKS5ob3N0bmFtZTsgfSBjYXRjaCAoZSkge30gfQoKICB2YXIgZm9ybSA9ICQoJ245LWZvcm0nKSwga2FydGUgPSAkKCduOS11bnRlcnNjaHJlaWJlbicpOwogIGZ1bmN0aW9uIG5hY2hPYmVuKCkgewogICAgdmFyIHIgPSBrYXJ0ZS5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTsKICAgIGlmIChyLnRvcCA8IDAgfHwgci50b3AgPiB3aW5kb3cuaW5uZXJIZWlnaHQgKiAwLjYpIGthcnRlLnNjcm9sbEludG9WaWV3KHsgYmVoYXZpb3I6ICdzbW9vdGgnLCBibG9jazogJ3N0YXJ0JyB9KTsKICB9CgogIC8qIFNjaHJpdHQgMTogQW5saWVnZW4gKi8KICB2YXIgYm94ZW4gPSBhbGxlKCdpbnB1dFtuYW1lPWZvcmRlcnVuZ10nKTsKICBmdW5jdGlvbiBnZXdhZWhsdCgpIHsgcmV0dXJuIGJveGVuLmZpbHRlcihmdW5jdGlvbiAoYikgeyByZXR1cm4gYi5jaGVja2VkOyB9KS5tYXAoZnVuY3Rpb24gKGIpIHsgcmV0dXJuIGIudmFsdWU7IH0pOyB9CiAgZnVuY3Rpb24gaW5mb0FrdHVhbGlzaWVyZW4oKSB7CiAgICB2YXIgbiA9IGdld2FlaGx0KCkubGVuZ3RoLCBpbmZvID0gJCgnbjktd2FobC1pbmZvJyk7CiAgICBpbmZvLmNsYXNzTGlzdC50b2dnbGUoJ3dhcm4nLCBuID09PSAwKTsKICAgICQoJ245LXdlaXRlcicpLmRpc2FibGVkID0gbiA9PT0gMDsKICAgIGlmIChuID09PSA5KSBpbmZvLnRleHRDb250ZW50ID0gJ0FsbGUgOSBhdXNnZXfDpGhsdC4gQW50aXBwZW4sIHVtIGVpbiBBbmxpZWdlbiBhYnp1d8OkaGxlbi4nOwogICAgZWxzZSBpZiAobiA9PT0gMCkgeyBpbmZvLmlubmVySFRNTCA9ICdCaXR0ZSBtaW5kZXN0ZW5zIGVpbiBBbmxpZWdlbiBhdXN3w6RobGVuLiA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgZGF0YS1hbGxlPkFsbGUgYXVzd8OkaGxlbjwvYnV0dG9uPic7IH0KICAgIGVsc2UgeyBpbmZvLmlubmVySFRNTCA9IG4gKyAnIHZvbiA5IGF1c2dld8OkaGx0LiA8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgZGF0YS1hbGxlPkFsbGUgYXVzd8OkaGxlbjwvYnV0dG9uPic7IH0KICB9CiAgYm94ZW4uZm9yRWFjaChmdW5jdGlvbiAoYikgeyBiLmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsIGluZm9Ba3R1YWxpc2llcmVuKTsgfSk7CiAgJCgnbjktd2FobC1pbmZvJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbiAoZSkgewogICAgaWYgKGUudGFyZ2V0Lmhhc0F0dHJpYnV0ZSgnZGF0YS1hbGxlJykpIHsgYm94ZW4uZm9yRWFjaChmdW5jdGlvbiAoYikgeyBiLmNoZWNrZWQgPSB0cnVlOyB9KTsgaW5mb0FrdHVhbGlzaWVyZW4oKTsgfQogIH0pOwogIGluZm9Ba3R1YWxpc2llcmVuKCk7CgogICQoJ245LXdlaXRlcicpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZnVuY3Rpb24gKCkgewogICAgdmFyIG4gPSBnZXdhZWhsdCgpLmxlbmd0aDsKICAgIGlmICghbikgcmV0dXJuOwogICAgJCgnbjktYXVzd2FobC10ZXh0JykudGV4dENvbnRlbnQgPSBuID09PSA5ID8gJ1NpZSB1bnRlcnN0w7x0emVuIGFsbGUgOSBBbmxpZWdlbi4nIDogJ1NpZSB1bnRlcnN0w7x0emVuICcgKyBuICsgJyB2b24gOSBBbmxpZWdlbi4nOwogICAgJCgnbjktc2Nocml0dDEnKS5oaWRkZW4gPSB0cnVlOwogICAgJCgnbjktc2Nocml0dDInKS5oaWRkZW4gPSBmYWxzZTsKICAgIG5hY2hPYmVuKCk7CiAgICB2YXIgZXJzdGVzID0gaXN0T3JnYSgpID8gJCgnbjktb3JnbmFtZScpIDogJCgnbjktdm9ybmFtZScpOwogICAgdHJ5IHsgZXJzdGVzLmZvY3VzKHsgcHJldmVudFNjcm9sbDogdHJ1ZSB9KTsgfSBjYXRjaCAoZSkgeyBlcnN0ZXMuZm9jdXMoKTsgfQogIH0pOwogICQoJ245LXp1cnVlY2snKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIGZ1bmN0aW9uICgpIHsKICAgIGZlaGxlcignJyk7CiAgICAkKCduOS1zY2hyaXR0MicpLmhpZGRlbiA9IHRydWU7CiAgICAkKCduOS1zY2hyaXR0MScpLmhpZGRlbiA9IGZhbHNlOwogICAgbmFjaE9iZW4oKTsKICB9KTsKCiAgLyogU2Nocml0dCAyOiBQcml2YXRwZXJzb24gb2RlciBPcmdhbmlzYXRpb24gKi8KICBmdW5jdGlvbiBpc3RPcmdhKCkgeyByZXR1cm4gZm9ybS5xdWVyeVNlbGVjdG9yKCdpbnB1dFtuYW1lPXR5cF06Y2hlY2tlZCcpLnZhbHVlID09PSAnT3JnYW5pc2F0aW9uJzsgfQogIGZ1bmN0aW9uIHR5cEFuemVpZ2VuKCkgewogICAgdmFyIG9yZ2EgPSBpc3RPcmdhKCk7CiAgICBmb3JtLmNsYXNzTGlzdC50b2dnbGUoJ2lzdC1vcmdhJywgb3JnYSk7CiAgICBhbGxlKCcubjktbnVyLW9yZ2EnKS5mb3JFYWNoKGZ1bmN0aW9uIChlKSB7IGUuaGlkZGVuID0gIW9yZ2E7IH0pOwogICAgYWxsZSgnLm45LW51ci1wZXJzb24nKS5mb3JFYWNoKGZ1bmN0aW9uIChlKSB7IGUuaGlkZGVuID0gb3JnYTsgfSk7CiAgICBmZWhsZXIoJycpOwogIH0KICBhbGxlKCdpbnB1dFtuYW1lPXR5cF0nKS5mb3JFYWNoKGZ1bmN0aW9uIChyKSB7IHIuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJywgdHlwQW56ZWlnZW4pOyB9KTsKICB0eXBBbnplaWdlbigpOwoKICBmdW5jdGlvbiBmZWhsZXIodCwgZmVsZCkgewogICAgdmFyIGYgPSAkKCduOS1mZWhsZXInKTsgZi50ZXh0Q29udGVudCA9IHQ7IGYuY2xhc3NMaXN0LnRvZ2dsZSgnemVpZ2VuJywgISF0KTsKICAgIGlmIChmZWxkKSBmZWxkLmZvY3VzKCk7CiAgfQoKICBmb3JtLmFkZEV2ZW50TGlzdGVuZXIoJ3N1Ym1pdCcsIGZ1bmN0aW9uIChlKSB7CiAgICBlLnByZXZlbnREZWZhdWx0KCk7IGZlaGxlcignJyk7CiAgICB2YXIgZiA9IGZvcm0uZWxlbWVudHMsIG9yZ2EgPSBpc3RPcmdhKCk7CiAgICB2YXIgcmVpY2ggPSBmb3JtLnF1ZXJ5U2VsZWN0b3IoJ2lucHV0W25hbWU9cmVpY2h3ZWl0ZV06Y2hlY2tlZCcpOwogICAgdmFyIGRhdGVuID0gewogICAgICB0eXA6IG9yZ2EgPyAnT3JnYW5pc2F0aW9uJyA6ICdQZXJzb24nLAogICAgICBvcmduYW1lOiBvcmdhID8gZi5vcmduYW1lLnZhbHVlLnRyaW0oKSA6ICcnLAogICAgICByZWljaHdlaXRlOiBvcmdhICYmIHJlaWNoID8gcmVpY2gudmFsdWUgOiAnJywKICAgICAgdm9ybmFtZTogZi52b3JuYW1lLnZhbHVlLnRyaW0oKSwKICAgICAgbmFjaG5hbWU6IGYubmFjaG5hbWUudmFsdWUudHJpbSgpLAogICAgICBwbHo6IGYucGx6LnZhbHVlLnRyaW0oKSwKICAgICAgZW1haWw6IGYuZW1haWwudmFsdWUudHJpbSgpLAogICAgICB0ZWxlZm9uOiBmLnRlbGVmb24udmFsdWUudHJpbSgpLAogICAgICBmb3JkZXJ1bmdlbjogZ2V3YWVobHQoKS5qb2luKCcsJyksCiAgICAgIGJlc3RhZXRpZ3Q6IG9yZ2EgPyBmLmJlcmVjaHRpZ3QuY2hlY2tlZCA6IGYuYWx0ZXIxNC5jaGVja2VkLAogICAgICBvcHRNYWlsOiBmLm9wdEluZm8uY2hlY2tlZCwgICAgIC8vIGVpbmUgRWlud2lsbGlndW5nIGbDvHIgSW5mb3MgenVyIEthbXBhZ25lIChTcGFsdGUgTSkKICAgICAgb3B0U21zOiBmYWxzZSwKICAgICAgd2Vic2l0ZTogZi53ZWJzaXRlLnZhbHVlLAogICAgICBxdWVsbGU6IHF1ZWxsZQogICAgfTsKICAgIGlmIChvcmdhICYmICFkYXRlbi5vcmduYW1lKSByZXR1cm4gZmVobGVyKCdCaXR0ZSBnZWJlbiBTaWUgZGVuIE5hbWVuIGRlciBPcmdhbmlzYXRpb24gYW4uJywgZi5vcmduYW1lKTsKICAgIGlmIChvcmdhICYmICFkYXRlbi5yZWljaHdlaXRlKSByZXR1cm4gZmVobGVyKCdCaXR0ZSB3w6RobGVuIFNpZSwgd28gZGllIE9yZ2FuaXNhdGlvbiB0w6R0aWcgaXN0OiBsb2thbCwgbmF0aW9uYWwgb2RlciBpbnRlcm5hdGlvbmFsLicpOwogICAgaWYgKCFkYXRlbi52b3JuYW1lKSByZXR1cm4gZmVobGVyKG9yZ2EgPyAnQml0dGUgZ2ViZW4gU2llIGRlbiBWb3JuYW1lbiBkZXIgS29udGFrdHBlcnNvbiBhbi4nIDogJ0JpdHRlIGdlYmVuIFNpZSBJaHJlbiBWb3JuYW1lbiBhbi4nLCBmLnZvcm5hbWUpOwogICAgaWYgKCFkYXRlbi5uYWNobmFtZSkgcmV0dXJuIGZlaGxlcihvcmdhID8gJ0JpdHRlIGdlYmVuIFNpZSBkZW4gTmFjaG5hbWVuIGRlciBLb250YWt0cGVyc29uIGFuLicgOiAnQml0dGUgZ2ViZW4gU2llIElocmVuIE5hY2huYW1lbiBhbi4nLCBmLm5hY2huYW1lKTsKICAgIGlmICghL15bXlxzQF0rQFteXHNAXStcLlteXHNAXSskLy50ZXN0KGRhdGVuLmVtYWlsKSkgcmV0dXJuIGZlaGxlcignQml0dGUgcHLDvGZlbiBTaWUgZGllIEUtTWFpbC1BZHJlc3NlLicsIGYuZW1haWwpOwogICAgaWYgKCEvXlxkezR9JC8udGVzdChkYXRlbi5wbHopKSByZXR1cm4gZmVobGVyKG9yZ2EgPyAnQml0dGUgZ2ViZW4gU2llIGRpZSBQb3N0bGVpdHphaGwgZGVyIEtvbnRha3RwZXJzb24gYW4gKDQgWmlmZmVybikuJyA6ICdCaXR0ZSBnZWJlbiBTaWUgZWluZSDDtnN0ZXJyZWljaGlzY2hlIFBvc3RsZWl0emFobCBtaXQgNCBaaWZmZXJuIGFuLicsIGYucGx6KTsKICAgIGlmICghZGF0ZW4uYmVzdGFldGlndCkgcmV0dXJuIGZlaGxlcihvcmdhID8gJ0JpdHRlIGJlc3TDpHRpZ2VuIFNpZSwgZGFzcyBTaWUgaW0gTmFtZW4gZGVyIE9yZ2FuaXNhdGlvbiB1bnRlcnNjaHJlaWJlbiBkw7xyZmVuLicgOiAnVW50ZXJzY2hyZWliZW4ga8O2bm5lbiBNZW5zY2hlbiBhYiAxNCBKYWhyZW4uIEJpdHRlIGJlc3TDpHRpZ2VuIFNpZSBkYXMuJyk7CiAgICBpZiAoIUtPTkZJRy5lbmRwb2ludCkgcmV0dXJuIGZlaGxlcignVGVzdG1vZHVzOiBEYXMgRm9ybXVsYXIgaXN0IG5vY2ggbmljaHQgbWl0IGRlciBUYWJlbGxlIHZlcmJ1bmRlbi4nKTsKCiAgICB2YXIgYnRuID0gJCgnbjktYnRuJyk7CiAgICBidG4uZGlzYWJsZWQgPSB0cnVlOyBidG4udGV4dENvbnRlbnQgPSAnV2lyZCBnZXNlbmRldCDigKYnOwogICAgZmV0Y2goS09ORklHLmVuZHBvaW50LCB7IG1ldGhvZDogJ1BPU1QnLCBib2R5OiBKU09OLnN0cmluZ2lmeShkYXRlbikgfSkKICAgICAgLnRoZW4oZnVuY3Rpb24gKHIpIHsgcmV0dXJuIHIuanNvbigpOyB9KQogICAgICAudGhlbihmdW5jdGlvbiAoZCkgewogICAgICAgIGlmICghZCB8fCAhZC5vaykgdGhyb3cgbmV3IEVycm9yKChkICYmIGQuZXJyb3IpIHx8ICdmZWhsZXInKTsKICAgICAgICBpZiAoZC5jb3VudCkgemVpZ2VaYWhsKGQuY291bnQsIGQub3JncyB8fCAwKTsKICAgICAgICBsZXR6dGUgPSBkYXRlbjsKICAgICAgICBkYW5rZShvcmdhID8gZGF0ZW4ub3JnbmFtZSA6IGRhdGVuLnZvcm5hbWUsIGQuZHVwbGljYXRlLCBkYXRlbi5wbHopOwogICAgICB9KQogICAgICAuY2F0Y2goZnVuY3Rpb24gKCkgewogICAgICAgIGZlaGxlcignRGFzIGhhdCBsZWlkZXIgbmljaHQgZ2VrbGFwcHQuIEJpdHRlIHZlcnN1Y2hlbiBTaWUgZXMgaW4gZWluZXIgTWludXRlIG5vY2ggZWlubWFsLicpOwogICAgICAgIGJ0bi5kaXNhYmxlZCA9IGZhbHNlOyBidG4udGV4dENvbnRlbnQgPSAnSmV0enQgdW50ZXJzY2hyZWliZW4nOwogICAgICB9KTsKICB9KTsKCiAgdmFyIGxldHp0ZSA9IG51bGw7CiAgJCgnbjktbW90aXYtYnRuJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbiAoKSB7CiAgICB2YXIgYiA9IHRoaXMsIGYgPSAkKCduOS1tb3Rpdi1mZWhsZXInKTsKICAgIGlmICghbGV0enRlIHx8ICFLT05GSUcuZW5kcG9pbnQpIHJldHVybjsKICAgIGIuZGlzYWJsZWQgPSB0cnVlOyBiLnRleHRDb250ZW50ID0gJ1dpcmQgZ2VzZW5kZXQg4oCmJzsgZi5oaWRkZW4gPSB0cnVlOwogICAgdmFyIG0gPSB7IHR5cDogJ01vdGl2YXRpb24nLCBhcnQ6IGxldHp0ZS50eXAsIG9yZ25hbWU6IGxldHp0ZS5vcmduYW1lLCB2b3JuYW1lOiBsZXR6dGUudm9ybmFtZSwgbmFjaG5hbWU6IGxldHp0ZS5uYWNobmFtZSwKICAgICAgICAgICAgICBwbHo6IGxldHp0ZS5wbHosIGVtYWlsOiBsZXR6dGUuZW1haWwsIHRlbGVmb246IGxldHp0ZS50ZWxlZm9uLCB3ZWJzaXRlOiAnJyB9OwogICAgZmV0Y2goS09ORklHLmVuZHBvaW50LCB7IG1ldGhvZDogJ1BPU1QnLCBib2R5OiBKU09OLnN0cmluZ2lmeShtKSB9KQogICAgICAudGhlbihmdW5jdGlvbiAocikgeyByZXR1cm4gci5qc29uKCk7IH0pCiAgICAgIC50aGVuKGZ1bmN0aW9uIChyKSB7CiAgICAgICAgaWYgKCFyIHx8ICFyLm9rKSB0aHJvdyBuZXcgRXJyb3IoJ2ZlaGxlcicpOwogICAgICAgIGIuaGlkZGVuID0gdHJ1ZTsgJCgnbjktbW90aXYnKS5xdWVyeVNlbGVjdG9yKCcubjktbW90aXYta2xlaW4nKS5oaWRkZW4gPSB0cnVlOyAkKCduOS1tb3Rpdi1vaycpLmhpZGRlbiA9IGZhbHNlOwogICAgICB9KQogICAgICAuY2F0Y2goZnVuY3Rpb24gKCkgeyBmLnRleHRDb250ZW50ID0gJ0RhcyBoYXQgbGVpZGVyIG5pY2h0IGdla2xhcHB0LiBCaXR0ZSB2ZXJzdWNoZW4gU2llIGVzIG5vY2ggZWlubWFsIG9kZXIgc2NocmVpYmVuIFNpZSB1bnMgYW4gaW5mb0A5LTEuYXQuJzsgZi5oaWRkZW4gPSBmYWxzZTsgYi5kaXNhYmxlZCA9IGZhbHNlOyBiLnRleHRDb250ZW50ID0gJ0ljaCBtw7ZjaHRlIG1laW5lIHBlcnPDtm5saWNoZSBNb3RpdmF0aW9uIGF1ZiA5LTEuYXQgdGVpbGVuJzsgfSk7CiAgfSk7CgogIGZ1bmN0aW9uIGRhbmtlKG5hbWUsIGRvcHBlbHQsIHBseikgewogICAgZm9ybS5oaWRkZW4gPSB0cnVlOwogICAgJCgnbjktZGFua2UtdGl0ZWwnKS50ZXh0Q29udGVudCA9ICdEYW5rZSwgJyArIG5hbWUgKyAnISc7CiAgICBpZiAoZG9wcGVsdCkgJCgnbjktZGFua2UtdGV4dCcpLnRleHRDb250ZW50ID0gJ01pdCBkaWVzZXIgRS1NYWlsLUFkcmVzc2Ugd3VyZGUgc2Nob24gdW50ZXJzY2hyaWViZW4uIERpZSBTdGltbWUgaXN0IGFsc28gZGFiZWkuIEhlbGZlbiBTaWUgamV0enQgbWl0LCBkYXNzIGVzIG1laHIgd2VyZGVuOiBTY2hpY2tlbiBTaWUgZGVuIEJyaWVmIGFuIHp3ZWkgTWVuc2NoZW4sIGRpZSBhbmRlcnMgZGVua2VuIGFscyBTaWUuJzsKICAgIHZhciB0ZXh0ID0gJ0ljaCBoYWJlIGRlbiBvZmZlbmVuIEJyaWVmIGFuIGRlbiBCdW5kZXNwcsOkc2lkZW50ZW4gdW50ZXJzY2hyaWViZW46IDkgQW5saWVnZW4sIGhpbnRlciBkZW5lbiBmYXN0IGFsbGUgc3RlaGVuIGvDtm5uZW4uIFVudGVyc2NocmVpYiBhdWNoOiAnICsgS09ORklHLnNlaXRlICsgJyAjemFtaGFsdGVuJzsKICAgICQoJ245LXdhJykuaHJlZiA9ICdodHRwczovL3dhLm1lLz90ZXh0PScgKyBlbmNvZGVVUklDb21wb25lbnQodGV4dCk7CiAgICAkKCduOS10ZycpLmhyZWYgPSAnaHR0cHM6Ly90Lm1lL3NoYXJlL3VybD91cmw9JyArIGVuY29kZVVSSUNvbXBvbmVudChLT05GSUcuc2VpdGUpICsgJyZ0ZXh0PScgKyBlbmNvZGVVUklDb21wb25lbnQodGV4dC5yZXBsYWNlKCcgJyArIEtPTkZJRy5zZWl0ZSwgJycpKTsKICAgIGlmIChLT05GSUcua2FydGUpIHsKICAgICAgJCgnbjktenVyLWthcnRlJykuaHJlZiA9IEtPTkZJRy5rYXJ0ZSArIChLT05GSUcua2FydGUuaW5kZXhPZignPycpIDwgMCA/ICc/JyA6ICcmJykgKyAncGx6PScgKyBlbmNvZGVVUklDb21wb25lbnQocGx6KTsKICAgICAgJCgnbjktcmVnaW9uLXRleHQnKS50ZXh0Q29udGVudCA9ICdBdWYgZGVyIEthcnRlIHNlaGVuIFNpZSwgd2FzIHJ1bmQgdW0gJyArIHBseiArICcgZ2VwbGFudCBpc3QsIHVuZCBrw7ZubmVuIHNlbGJzdCBldHdhcyBhdWYgZGllIEJlaW5lIHN0ZWxsZW4uJzsKICAgICAgJCgnbjktcmVnaW9uJykuaGlkZGVuID0gZmFsc2U7CiAgICB9CiAgICAkKCduOS1kYW5rZScpLmNsYXNzTGlzdC5hZGQoJ3plaWdlbicpOwogICAgbmFjaE9iZW4oKTsKICB9CgogICQoJ245LWtvcGllcmVuJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbiAoKSB7CiAgICB2YXIgYiA9IHRoaXM7CiAgICBmdW5jdGlvbiBvaygpIHsgYi50ZXh0Q29udGVudCA9ICdMaW5rIGtvcGllcnQg4pyTJzsgfQogICAgZnVuY3Rpb24gemVpZ2VuKCkgeyBiLnRleHRDb250ZW50ID0gS09ORklHLnNlaXRlOyB9CiAgICB0cnkgeyBuYXZpZ2F0b3IuY2xpcGJvYXJkLndyaXRlVGV4dChLT05GSUcuc2VpdGUpLnRoZW4ob2ssIHplaWdlbik7IH0gY2F0Y2ggKGUpIHsgemVpZ2VuKCk7IH0KICB9KTsKfSkoKTsK');var u=new Uint8Array(t.length);for(var i=0;i<t.length;i++)u[i]=t.charCodeAt(i);new Function(new TextDecoder('utf-8').decode(u))();})();</script>
+</div>

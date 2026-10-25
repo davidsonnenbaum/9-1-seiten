@@ -1,0 +1,15 @@
+# 9-1.at · Seiten
+
+Die Inhalte der Seiten von [9-1.at](https://9-1.at). WordPress lädt sie über `lader.js` von GitHub Pages.
+Eine Änderung hier ist nach wenigen Minuten auf 9-1.at sichtbar, in WordPress muss nichts kopiert werden.
+
+| Datei | WordPress-Seite |
+|---|---|
+| `seiten/startseite.html` | Startseite |
+| `seiten/karte.html` | /karte |
+| `seiten/geschichten.html` | /geschichten |
+| `seiten/impressum.html` | /impressum |
+| `seiten/datenschutz.html` | /datenschutz |
+| `seiten/verhaltensregeln.html` | /verhaltensregeln |
+
+Die Blöcke, die in WordPress stehen, sind in `wordpress-bloecke.md`.

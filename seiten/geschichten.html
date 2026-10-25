@@ -1,0 +1,90 @@
+<!-- 9-1.at · Geschichten "Warum wir dabei sind" · als Block "Individuelles HTML" auf der Seite /geschichten einfügen.
+     Die Geschichten kommen aus dem Blatt "Motivationen" (nur Zeilen mit "ja" und einem Zitat). -->
+<div id="n9s" lang="de">
+<style>
+body{overflow-x:clip}
+#n9s{--rot:#c8102e;--rot-dunkel:#a30c25;--rosa:#fdf0f2;--tinte:#1b1b1b;--grau:#5c5c5c;--papier:#faf7f4;--linie:#e3dbd5;
+  position:relative!important;width:100vw!important;max-width:100vw!important;left:calc(50% - 50vw)!important;right:auto!important;margin:0!important;padding:0!important;
+  font-family:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--tinte);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;text-align:left}
+#n9s *{box-sizing:border-box}
+#n9s h1,#n9s h2,#n9s p,#n9s blockquote,#n9s figure{margin:0;padding:0;border:0;font-family:inherit}
+#n9s [hidden]{display:none!important}
+#n9s a{color:inherit}
+#n9s .s-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+#n9s .s-leiste{background:var(--rot-dunkel);color:#fff;font-size:15px}
+#n9s .s-leiste .s-wrap{display:flex;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+#n9s .s-leiste a{color:#fff;font-weight:700;text-decoration:none}
+#n9s .s-leiste a:hover{text-decoration:underline}
+
+#n9s .s-hero{background:var(--rot);color:#fff;padding:52px 0 60px}
+#n9s .s-eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-bottom:10px}
+#n9s h1{font-size:clamp(34px,5vw,58px);line-height:1.04;font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:16px;text-wrap:balance}
+#n9s .s-lead{font-size:19px;max-width:640px}
+
+#n9s .s-liste{background:var(--papier);padding:56px 0 72px}
+#n9s .s-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+#n9s .s-karte{background:#fff;border:1px solid var(--linie);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+#n9s .s-foto{aspect-ratio:4/3;max-width:100%;background:var(--rosa);display:flex;align-items:center;justify-content:center;overflow:hidden}
+#n9s .s-foto img{width:100%;height:100%;object-fit:cover;display:block}
+#n9s .s-foto svg{width:64px;height:64px;color:#e8a3b0}
+#n9s .s-foto span{display:block;font-size:13px;font-weight:700;color:#c9808e;margin-top:6px;text-align:center}
+#n9s .s-text{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
+#n9s .s-zitat{font-size:20px;line-height:1.4;font-weight:600;color:var(--tinte);position:relative;padding-top:34px}
+#n9s .s-zitat::before{content:"\201C";position:absolute;top:-6px;left:-3px;font-size:68px;line-height:1;font-weight:800;color:var(--rot);font-family:Georgia,"Times New Roman",serif}
+#n9s .s-name{font-size:15px;color:var(--grau)}
+#n9s .s-name b{color:var(--tinte);font-weight:800}
+#n9s .s-karte.platzhalter{border-style:dashed;border-color:#e5b9c1;background:transparent}
+#n9s .s-karte.platzhalter .s-foto{background:transparent;border-bottom:1px dashed #e5b9c1}
+#n9s .s-karte.platzhalter .s-zitat{color:#b98a93;font-weight:500}
+#n9s .s-karte.platzhalter .s-name{color:#c9a5ac}
+#n9s .s-beispiel{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--linie);border-radius:3px;padding:0 5px;margin-left:6px;color:var(--grau);vertical-align:1px}
+
+#n9s .s-eigene{background:var(--rot);color:#fff;border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;justify-content:center;min-height:100%}
+#n9s .s-eigene b{font-size:24px;line-height:1.2;font-weight:800}
+#n9s .s-eigene p{font-size:16px}
+#n9s .s-btn{display:inline-block;align-self:flex-start;padding:13px 20px;border-radius:4px;background:#fff;color:var(--rot);font-weight:800;text-decoration:none}
+#n9s .s-btn:hover{background:var(--rosa)}
+
+#n9s .s-fuss{background:var(--tinte);color:#ddd;padding:32px 0;font-size:14px}
+#n9s .s-fuss .s-wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+#n9s .s-fuss a{color:#fff}
+
+@media (max-width:960px){#n9s .s-raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){#n9s .s-wrap{padding:0 16px}#n9s .s-raster{grid-template-columns:minmax(0,1fr)}#n9s .s-hero{padding:36px 0 44px}#n9s .s-liste{padding:40px 0 56px}#n9s .s-zitat{font-size:19px}}
+</style>
+
+<div class="s-leiste"><div class="s-wrap"><a href="/">← Zum offenen Brief</a><a href="/#n9-unterschreiben">Brief unterschreiben</a></div></div>
+
+<section class="s-hero">
+  <div class="s-wrap">
+    <p class="s-eyebrow">Geschichten</p>
+    <h1>Warum wir dabei sind</h1>
+    <p class="s-lead">Hinter jeder Unterschrift steht ein Mensch mit einer eigenen Geschichte. Hier erzählen Menschen aus ganz Österreich, was sie bewegt und warum sie am 9. Jänner dabei sind.</p>
+  </div>
+</section>
+
+<section class="s-liste">
+  <div class="s-wrap">
+    <div class="s-raster" id="s-raster"></div>
+  </div>
+</section>
+
+<footer class="s-fuss">
+  <div class="s-wrap">
+    <span>#zamhalten · 9-1.at</span>
+    <span><a href="https://chat.whatsapp.com/Ck0ArbnN0PN87qS8moi70S" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/BewegungDes9Jaenner" target="_blank" rel="noopener">Telegram</a> · <a href="https://signal.group/#CjQKIP5_sqANFQqLf_ESD3ggeAaeCGQrbHZT8nAgqr7vD08ZEhCgcW7wmrPPdGhnqIS52s_v" target="_blank" rel="noopener">Signal</a></span>
+    <span><a href="/karte">Karte</a> · <a href="/geschichten">Geschichten</a> · <a href="/verhaltensregeln">Verhaltensregeln</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+/* ======= HIER ANPASSEN ======= */
+window.N9S_KONFIG = {
+  endpoint: 'https://script.google.com/macros/s/AKfycbwQ6HMwGShcyawXx7PvdBBLqFHuUSwjtWg2BCk-9tdJu105i9L6M4puHSNIpJ97zjpk/exec',   // dieselbe Web-App-URL wie auf der Startseite
+  beispiele: false             // true = Beispielgeschichten zeigen (nur für die Vorschau)
+};
+/* ============================ */
+</script>
+<script>/* Programmcode, verpackt, damit WordPress ihn nicht verändert */(function(){var t=atob('CihmdW5jdGlvbiAoKSB7CiAgdmFyIEtPTkZJRyA9IHdpbmRvdy5OOVNfS09ORklHOwoKICBmdW5jdGlvbiAkKGlkKSB7IHJldHVybiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCk7IH0KICBmdW5jdGlvbiBlbCh0YWcsIGNscywgdGV4dCkgeyB2YXIgZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQodGFnKTsgaWYgKGNscykgZS5jbGFzc05hbWUgPSBjbHM7IGlmICh0ZXh0ICE9IG51bGwpIGUudGV4dENvbnRlbnQgPSB0ZXh0OyByZXR1cm4gZTsgfQogIHZhciBQRVJTT04gPSAnPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGFyaWEtaGlkZGVuPSJ0cnVlIiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSI4LjUiIHI9IjQiLz48cGF0aCBkPSJNNCAyMWE4IDggMCAwIDEgMTYgMCIvPjwvc3ZnPic7CiAgZnVuY3Rpb24gc2ljaGVyTGluayh1KSB7IHJldHVybiAvXmh0dHBzOlwvXC9bXlxzIic8Pl0rJC9pLnRlc3QodSB8fCAnJykgPyB1IDogJyc7IH0KCiAgZnVuY3Rpb24ga2FydGUoZywgcGxhdHpoYWx0ZXIpIHsKICAgIHZhciBhID0gZWwoJ2FydGljbGUnLCAncy1rYXJ0ZScgKyAocGxhdHpoYWx0ZXIgPyAnIHBsYXR6aGFsdGVyJyA6ICcnKSk7CiAgICB2YXIgZiA9IGVsKCdmaWd1cmUnLCAncy1mb3RvJyk7CiAgICB2YXIgZm90byA9ICFwbGF0emhhbHRlciAmJiBzaWNoZXJMaW5rKGcuZm90byk7CiAgICBpZiAoZm90bykgeyB2YXIgaW1nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaW1nJyk7IGltZy5zcmMgPSBmb3RvOyBpbWcuYWx0ID0gJ0ZvdG8gdm9uICcgKyAoZy5uYW1lIHx8ICdlaW5lciB1bnRlcnN0w7x0emVuZGVuIFBlcnNvbicpOyBpbWcubG9hZGluZyA9ICdsYXp5JzsgZi5hcHBlbmRDaGlsZChpbWcpOyB9CiAgICBlbHNlIHsgdmFyIGJveCA9IGVsKCdkaXYnKTsgYm94LmlubmVySFRNTCA9IFBFUlNPTjsgaWYgKHBsYXR6aGFsdGVyKSBib3guYXBwZW5kQ2hpbGQoZWwoJ3NwYW4nLCBudWxsLCAnRm90bycpKTsgZi5hcHBlbmRDaGlsZChib3gpOyB9CiAgICBhLmFwcGVuZENoaWxkKGYpOwogICAgdmFyIHQgPSBlbCgnZGl2JywgJ3MtdGV4dCcpOwogICAgdC5hcHBlbmRDaGlsZChlbCgnYmxvY2txdW90ZScsICdzLXppdGF0JywgZy56aXRhdCkpOwogICAgdmFyIG4gPSBlbCgncCcsICdzLW5hbWUnKTsgbi5hcHBlbmRDaGlsZChlbCgnYicsIG51bGwsIGcubmFtZSB8fCAnJykpOwogICAgaWYgKGcub3J0KSBuLmFwcGVuZENoaWxkKGRvY3VtZW50LmNyZWF0ZVRleHROb2RlKCcgwrcgJyArIGcub3J0KSk7CiAgICBpZiAoZy5iZWlzcGllbCkgbi5hcHBlbmRDaGlsZChlbCgnc3BhbicsICdzLWJlaXNwaWVsJywgJ0JlaXNwaWVsJykpOwogICAgdC5hcHBlbmRDaGlsZChuKTsgYS5hcHBlbmRDaGlsZCh0KTsKICAgIHJldHVybiBhOwogIH0KICBmdW5jdGlvbiBlaWdlbmUoKSB7CiAgICB2YXIgYSA9IGVsKCdhcnRpY2xlJywgJ3MtZWlnZW5lJyk7CiAgICBhLmFwcGVuZENoaWxkKGVsKCdiJywgbnVsbCwgJ0locmUgR2VzY2hpY2h0ZSBmZWhsdCBub2NoJykpOwogICAgYS5hcHBlbmRDaGlsZChlbCgncCcsIG51bGwsICdVbnRlcnNjaHJlaWJlbiBTaWUgZGVuIG9mZmVuZW4gQnJpZWYuIERhbmFjaCBrw7ZubmVuIFNpZSB1bnMgc2FnZW4sIGRhc3MgU2llIElocmUgcGVyc8O2bmxpY2hlIE1vdGl2YXRpb24gdGVpbGVuIG3DtmNodGVuLCB1bmQgd2lyIG1lbGRlbiB1bnMgYmVpIElobmVuLicpKTsKICAgIHZhciBiID0gZWwoJ2EnLCAncy1idG4nLCAnQnJpZWYgdW50ZXJzY2hyZWliZW4nKTsgYi5ocmVmID0gJy8jbjktdW50ZXJzY2hyZWliZW4nOyBhLmFwcGVuZENoaWxkKGIpOwogICAgcmV0dXJuIGE7CiAgfQogIHZhciBQTEFUWkhBTFRFUiA9IFsKICAgIHsgeml0YXQ6ICdIaWVyIHN0ZWh0IGJhbGQsIHdhcnVtIE1lbnNjaGVuIGluIGdhbnogw5ZzdGVycmVpY2ggbWl0bWFjaGVuLicsIG5hbWU6ICdOYW1lJywgb3J0OiAnT3J0JyB9LAogICAgeyB6aXRhdDogJ0VpbiBTYXR6LCBkZXIgemVpZ3QsIHdhcyBkaWVzZSBQZXJzb24gYmV3ZWd0LicsIG5hbWU6ICdOYW1lJywgb3J0OiAnT3J0JyB9CiAgXTsKICB2YXIgQkVJU1BJRUxFID0gWwogICAgeyB6aXRhdDogJ0ljaCB3aWxsLCBkYXNzIHdpciBlaW5hbmRlciB3aWVkZXIgenVow7ZyZW4sIGF1Y2ggd2VubiB3aXIgdmVyc2NoaWVkZW5lciBNZWludW5nIHNpbmQuJywgbmFtZTogJ0FubmEnLCBvcnQ6ICdXaWVuJywgYmVpc3BpZWw6IHRydWUgfSwKICAgIHsgeml0YXQ6ICdNZWluZSBNdXR0ZXIgaXN0IGluIGRlciBQZmxlZ2UuIEljaCBzZWhlIGplZGVuIFRhZywgd2llIGVyc2Now7ZwZnQgc2llIGlzdC4nLCBuYW1lOiAnTWFya3VzJywgb3J0OiAnR3JheicsIGJlaXNwaWVsOiB0cnVlIH0sCiAgICB7IHppdGF0OiAnRGVyIGxldHp0ZSBTb21tZXIgd2FyIGJlaSB1bnMgaW0gRG9yZiBrYXVtIGF1c3p1aGFsdGVuLiBXaXIgbcO8c3NlbiBqZXR6dCBoYW5kZWxuLicsIG5hbWU6ICdFbGlmJywgb3J0OiAnV2VscycsIGJlaXNwaWVsOiB0cnVlIH0KICBdOwogIGZ1bmN0aW9uIHplaWdlbihsaXN0ZSkgewogICAgdmFyIHIgPSAkKCdzLXJhc3RlcicpOyByLnRleHRDb250ZW50ID0gJyc7CiAgICBsaXN0ZS5mb3JFYWNoKGZ1bmN0aW9uIChnKSB7IHIuYXBwZW5kQ2hpbGQoa2FydGUoZywgZmFsc2UpKTsgfSk7CiAgICB2YXIgZmVobGVuID0gTWF0aC5tYXgoMCwgMiAtIGxpc3RlLmxlbmd0aCk7CiAgICBQTEFUWkhBTFRFUi5zbGljZSgwLCBmZWhsZW4pLmZvckVhY2goZnVuY3Rpb24gKGcpIHsgci5hcHBlbmRDaGlsZChrYXJ0ZShnLCB0cnVlKSk7IH0pOwogICAgci5hcHBlbmRDaGlsZChlaWdlbmUoKSk7CiAgfQogIHplaWdlbihLT05GSUcuYmVpc3BpZWxlID8gQkVJU1BJRUxFIDogW10pOwogIGlmIChLT05GSUcuZW5kcG9pbnQpIHsKICAgIGZldGNoKEtPTkZJRy5lbmRwb2ludCArIChLT05GSUcuZW5kcG9pbnQuaW5kZXhPZignPycpIDwgMCA/ICc/JyA6ICcmJykgKyAnZ2VzY2hpY2h0ZW49MScpCiAgICAgIC50aGVuKGZ1bmN0aW9uIChyKSB7IHJldHVybiByLmpzb24oKTsgfSkKICAgICAgLnRoZW4oZnVuY3Rpb24gKGQpIHsgaWYgKGQgJiYgZC5vayAmJiBkLmdlc2NoaWNodGVuKSB6ZWlnZW4oKEtPTkZJRy5iZWlzcGllbGUgPyBCRUlTUElFTEUgOiBbXSkuY29uY2F0KGQuZ2VzY2hpY2h0ZW4pKTsgfSkKICAgICAgLmNhdGNoKGZ1bmN0aW9uICgpIHt9KTsKICB9Cn0pKCk7Cg==');var u=new Uint8Array(t.length);for(var i=0;i<t.length;i++)u[i]=t.charCodeAt(i);new Function(new TextDecoder('utf-8').decode(u))();})();</script>
+</div>
