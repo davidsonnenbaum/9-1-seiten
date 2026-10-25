@@ -26,7 +26,7 @@
       })
       .catch(function () {
         platz.style.minHeight = '';
-        platz.innerHTML = '<p style="padding:48px 16px;text-align:center;font:17px/1.5 Arial,sans-serif">Die Seite konnte gerade nicht geladen werden. Bitte laden Sie sie in einem Moment neu.</p>';
+        platz.innerHTML = '<p style="padding:48px 16px;text-align:center;font:17px/1.5 Arial,sans-serif">Die Seite konnte gerade nicht geladen werden. Bitte lade sie in einem Moment neu.</p>';
       });
   }
 
