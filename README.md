@@ -6,6 +6,7 @@ Eine Änderung hier ist nach wenigen Minuten auf 9-1.at sichtbar, in WordPress m
 | Datei | WordPress-Seite |
 |---|---|
 | `seiten/startseite.html` | Startseite |
+| `seiten/anliegen.html` | /anliegen |
 | `seiten/karte.html` | /karte |
 | `seiten/geschichten.html` | /geschichten |
 | `seiten/impressum.html` | /impressum |

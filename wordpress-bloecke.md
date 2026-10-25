@@ -10,6 +10,14 @@ Jeweils als Block **„Individuelles HTML"** einfügen (alten Inhalt der Seite e
 <script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
 ```
 
+## Anliegen
+
+```html
+<p hidden aria-hidden="true">Die 9 Anliegen mit Fakten und Quellen: Wohnraum, Strom, Pflege, Medizin, Hitze, Dürre, Mitsprache, Rechenzentren, gerechte Steuern.</p>
+<div data-n9-seite="anliegen" style="min-height:100vh"></div>
+<script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
+```
+
 ## Karte
 
 ```html
