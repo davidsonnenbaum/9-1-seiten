@@ -35,7 +35,7 @@
   if (!document.getElementById('n9-lader-stil')) {
     var stil = document.createElement('style');
     stil.id = 'n9-lader-stil';
-    stil.textContent = '[data-n9-seite]{margin:0!important;padding:0!important}' +
+    stil.textContent = '[data-n9-seite]{margin-top:0!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important}' +
       'p[hidden]:has(+ [data-n9-seite]){display:none!important}';
     document.head.appendChild(stil);
   }
