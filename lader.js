@@ -30,6 +30,20 @@
       });
   }
 
+  // Das WordPress-Theme setzt zwischen Blöcken automatisch Abstände (z. B. vor dem Platzhalter,
+  // weil davor der unsichtbare Vorschau-Text steht). Das ergab oben einen weißen Streifen: hier auf null setzen.
+  if (!document.getElementById('n9-lader-stil')) {
+    var stil = document.createElement('style');
+    stil.id = 'n9-lader-stil';
+    stil.textContent = '[data-n9-seite]{margin:0!important;padding:0!important}' +
+      'p[hidden]:has(+ [data-n9-seite]){display:none!important}';
+    document.head.appendChild(stil);
+  }
+
   var plaetze = document.querySelectorAll('[data-n9-seite]');
-  for (var i = 0; i < plaetze.length; i++) laden(plaetze[i]);
+  for (var i = 0; i < plaetze.length; i++) {
+    var v = plaetze[i].previousElementSibling;
+    if (v && v.tagName === 'P' && v.hasAttribute('hidden')) v.style.setProperty('display', 'none', 'important');
+    laden(plaetze[i]);
+  }
 })();
