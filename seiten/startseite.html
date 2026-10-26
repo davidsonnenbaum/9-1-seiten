@@ -34,7 +34,7 @@ body{overflow-x:clip}
 #n9 .n9-lead{font-size:19px;max-width:580px;margin-bottom:30px}
 #n9 .n9-zahl{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-top:1px solid rgba(255,255,255,.35);padding-top:24px;max-width:580px}
 #n9 .n9-zahl strong{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1}
-#n9 .n9-ziel{max-width:580px;margin-top:16px}
+#n9 .n9-ziel{display:none!important} /* Ziel-Balken ausgeblendet */
 #n9 .n9-balken{height:8px;background:rgba(255,255,255,.25);border-radius:4px;overflow:hidden}
 #n9 .n9-balken span{display:block;height:100%;width:0;background:#fff;border-radius:4px;transition:width 1.2s ease}
 #n9 .n9-ziel small{display:block;font-size:14px;margin-top:8px;opacity:.9}
@@ -203,7 +203,7 @@ body{overflow-x:clip}
       <h1 class="n9-gross" aria-label="9 Anliegen. 9 Bundesländer. 9ter Jänner."><span class="n9-neun" aria-hidden="true">9</span><span class="n9-zeilen" aria-hidden="true"><span>Anliegen.</span><span>Bundesländer.</span><span>ter Jänner.</span></span></h1>
       <p class="n9-lead">Viele Menschen in Österreich fühlen sich mit Teuerung, Gesundheit und Hitze allein gelassen. Wir bitten den Bundespräsidenten, neun Anliegen auf die politische Agenda zu setzen. Am Samstag, 9.&nbsp;Jänner 2027, zeigen wir in ganz Österreich friedlich, dass wir zusammenhalten.</p>
       <div class="n9-zahl" id="n9-zahl-block" hidden><strong id="n9-zahl">–</strong><span id="n9-zahl-text">haben unterschrieben</span></div>
-      <div class="n9-ziel" id="n9-ziel" hidden><div class="n9-balken"><span id="n9-balken"></span></div><small id="n9-ziel-text">Unser erstes Ziel: 9.000 Unterschriften bis Weihnachten</small></div>
+      <div class="n9-ziel" id="n9-ziel" hidden><div class="n9-balken"><span id="n9-balken"></span></div><small id="n9-ziel-text"></small></div>
       <p class="n9-datum"><b>Samstag, 9. Jänner 2027</b> · <span id="n9-tage"></span> · #zamhalten</p>
       <div class="n9-knoepfe-kopf"><a class="n9-lesen" href="#n9-brief">Den ganzen Brief lesen ↓</a><a class="n9-lesen" href="/karte">Was ist los in deiner Region? →</a></div>
     </div>
@@ -430,7 +430,7 @@ window.N9_KONFIG = {
   endpoint: 'https://script.google.com/macros/s/AKfycbwQ6HMwGShcyawXx7PvdBBLqFHuUSwjtWg2BCk-9tdJu105i9L6M4puHSNIpJ97zjpk/exec',
   organisation: 'die Bewegung 9. Jänner',  // Name, der in den Einwilligungen steht
   ziel: 9000,
-  zielText: 'Unser erstes Ziel: 9.000 Unterschriften bis Weihnachten',
+  zielText: '',                      // kein Ziel mehr anzeigen
   zahlAnzeigenAb: 100,               // Zähler und Balken erscheinen erst ab dieser Zahl
   termin: '2027-01-09T00:00:00+01:00',
   seite: 'https://9-1.at',
