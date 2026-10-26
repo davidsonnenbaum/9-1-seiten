@@ -119,7 +119,22 @@ body{overflow-x:clip}
   #n9 .n9-wahl .n9-ic{width:24px;height:24px;flex-basis:auto}
   #n9 .n9-wahl span::after{top:10px;right:8px;margin-top:0}
 }
-@media (max-width:520px){#n9 .n9-wahl{grid-template-columns:minmax(0,1fr);gap:6px}#n9 .n9-wahl span{min-height:42px}}
+/* 3x3-Raster auch auf Tablet und Handy */
+@media (max-width:960px){
+  #n9 .n9-wahl{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #n9 .n9-wahl label{display:flex}
+  #n9 .n9-wahl span{flex:1;flex-direction:column;align-items:flex-start;gap:6px;min-height:84px;padding:10px 8px 9px;font-size:13px;line-height:1.2}
+  #n9 .n9-wahl .n9-ic{width:24px;height:24px;flex-basis:auto}
+  #n9 .n9-wahl span::after{top:9px;right:7px;margin-top:0}
+}
+@media (max-width:400px){
+  #n9 .n9-wahl span{font-size:12px;padding:9px 7px 8px;min-height:80px}
+  #n9 .n9-wahl .n9-ic{width:22px;height:22px}
+}
+@media (max-width:340px){
+  #n9 .n9-wahl{gap:5px}
+  #n9 .n9-wahl span{font-size:11px;padding:8px 6px 7px}
+}
 
 /* Verhaltensregeln kurz */
 #n9 .n9-regeln{background:#fff;padding:72px 0 80px;border-top:1px solid var(--linie)}
