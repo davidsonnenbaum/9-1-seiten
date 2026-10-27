@@ -1,5 +1,7 @@
 # Blöcke für WordPress
 
+Die Navigation oben (Offener Brief, Anliegen, Karte, Geschichten, Wer wir sind & FAQ, Unterschreiben) setzt `lader.js` auf jeder Seite automatisch ein. Menüpunkte ändern: Liste `MENUE` in `lader.js`.
+
 Jeweils als Block **„Individuelles HTML"** einfügen (alten Inhalt der Seite ersetzen). Das ist nur einmal nötig.
 
 ## Startseite
@@ -31,6 +33,16 @@ Jeweils als Block **„Individuelles HTML"** einfügen (alten Inhalt der Seite e
 ```html
 <p hidden aria-hidden="true">Hinter jeder Unterschrift steht ein Mensch. Hier erzählen Menschen aus ganz Österreich, was sie bewegt.</p>
 <div data-n9-seite="geschichten" style="min-height:100vh"></div>
+<script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
+```
+
+## Wer wir sind & FAQ
+
+Neue WordPress-Seite mit dem Titel **„Wer wir sind & FAQ“** und der Adresse (Permalink) **faq** anlegen.
+
+```html
+<p hidden aria-hidden="true">Wer steckt hinter der Bewegung 9. Jänner? Menschen aus dem Alltag, mit einer tiefen Sehnsucht nach Veränderung. Keine Partei.</p>
+<div data-n9-seite="faq" style="min-height:100vh"></div>
 <script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
 ```
 

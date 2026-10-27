@@ -9,8 +9,11 @@ Eine Änderung hier ist nach wenigen Minuten auf 9-1.at sichtbar, in WordPress m
 | `seiten/anliegen.html` | /anliegen |
 | `seiten/karte.html` | /karte |
 | `seiten/geschichten.html` | /geschichten |
+| `seiten/faq.html` | /faq (Wer wir sind & FAQ) |
 | `seiten/impressum.html` | /impressum |
 | `seiten/datenschutz.html` | /datenschutz |
 | `seiten/verhaltensregeln.html` | /verhaltensregeln |
 
 Die Blöcke, die in WordPress stehen, sind in `wordpress-bloecke.md`.
+
+Die Navigation oben auf jeder Seite kommt aus `lader.js` (Liste `MENUE`).
