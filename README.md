@@ -17,3 +17,4 @@ Eine Änderung hier ist nach wenigen Minuten auf 9-1.at sichtbar, in WordPress m
 Die Blöcke, die in WordPress stehen, sind in `wordpress-bloecke.md`.
 
 Die Navigation oben auf jeder Seite kommt aus `lader.js` (Liste `MENUE`).
+„Geschichten“ erscheint in Menü und Fußzeilen erst, wenn mindestens 2 Geschichten freigegeben sind (`GESCHICHTEN_AB` in `lader.js`). Die Seite /geschichten selbst bleibt immer erreichbar (Links „Deine Geschichte“ aus den Mails).

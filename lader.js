@@ -3,13 +3,17 @@
    In WordPress steht pro Seite nur:  <div data-n9-seite="NAME"></div>  plus dieses Script. */
 (function () {
   var BASIS = 'https://davidsonnenbaum.github.io/9-1-seiten/seiten/';
+  var SCRIPT = 'https://script.google.com/macros/s/AKfycbwQ6HMwGShcyawXx7PvdBBLqFHuUSwjtWg2BCk-9tdJu105i9L6M4puHSNIpJ97zjpk/exec';
+  // Der Menüpunkt "Geschichten" (und die Links in den Fußzeilen) erscheinen erst,
+  // wenn mindestens so viele Geschichten freigegeben sind. Die Seite selbst bleibt immer erreichbar.
+  var GESCHICHTEN_AB = 2;
 
   // Gemeinsame Navigation für alle Seiten. Neue Seite ins Menü: hier eine Zeile ergänzen.
   var MENUE = [
     ['/', 'Offener Brief'],
     ['/anliegen', 'Die 9 Anliegen'],
     ['/karte', 'Karte'],
-    ['/geschichten', 'Geschichten'],
+    ['/geschichten', 'Geschichten', 'geschichten'],
     ['/faq', 'Wer wir sind & FAQ']
   ];
 
@@ -20,7 +24,8 @@
     nav.setAttribute('aria-label', 'Hauptmenü');
     var links = MENUE.map(function (m) {
       var aktiv = m[0] === pfad ? ' aria-current="page"' : '';
-      return '<li><a href="' + m[0] + '"' + aktiv + '>' + m[1].replace('&', '&amp;') + '</a></li>';
+      var verborgen = m[2] ? ' hidden data-n9-bedingt="' + m[2] + '"' : '';
+      return '<li' + verborgen + '><a href="' + m[0] + '"' + aktiv + '>' + m[1].replace('&', '&amp;') + '</a></li>';
     }).join('');
     nav.innerHTML =
       '<div class="n9n-wrap">' +
@@ -44,6 +49,44 @@
     return nav;
   }
 
+  // Links zu /geschichten im Seiteninhalt (Fußzeilen) samt Trennpunkt verstecken, bis es genug Geschichten gibt
+  function geschichtenLinksVerstecken(bereich) {
+    var links = bereich.querySelectorAll('a[href="/geschichten"]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.closest('#n9-nav')) continue;
+      a.setAttribute('data-n9-bedingt', 'geschichten');
+      a.hidden = true;
+      var t = a.nextSibling;
+      if (t && t.nodeType === 3 && /^\s*·\s*$/.test(t.nodeValue)) {
+        var s = document.createElement('span');
+        s.setAttribute('data-n9-bedingt', 'geschichten'); s.hidden = true; s.textContent = t.nodeValue;
+        t.parentNode.replaceChild(s, t);
+      }
+    }
+  }
+
+  function geschichtenZeigen() {
+    var el = document.querySelectorAll('[data-n9-bedingt="geschichten"]');
+    for (var i = 0; i < el.length; i++) el[i].hidden = false;
+  }
+
+  var geschichtenGeprueft = false;
+  function geschichtenPruefen() {
+    if (geschichtenGeprueft) return; geschichtenGeprueft = true;
+    var gespeichert = null;
+    try { gespeichert = sessionStorage.getItem('n9-geschichten'); } catch (e) {}
+    if (gespeichert !== null) { if (+gespeichert >= GESCHICHTEN_AB) geschichtenZeigen(); return; }
+    fetch(SCRIPT + '?geschichten=1')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var n = d && d.ok && d.geschichten ? d.geschichten.length : 0;
+        try { sessionStorage.setItem('n9-geschichten', String(n)); } catch (e) {}
+        if (n >= GESCHICHTEN_AB) geschichtenZeigen();
+      })
+      .catch(function () {});
+  }
+
   function laden(platz) {
     var name = platz.getAttribute('data-n9-seite');
     if (!/^[a-z-]+$/.test(name || '') || platz.getAttribute('data-n9-geladen')) return;
@@ -54,6 +97,8 @@
       .then(function (html) {
         platz.innerHTML = html;
         if (!document.getElementById('n9-nav')) platz.insertBefore(navigation(), platz.firstChild);
+        geschichtenLinksVerstecken(platz);
+        geschichtenPruefen();
         // Scripts, die per innerHTML eingesetzt werden, laufen nicht von selbst: neu anlegen
         var alte = platz.querySelectorAll('script');
         for (var i = 0; i < alte.length; i++) {
@@ -82,6 +127,7 @@
       '#n9-nav{position:relative;width:100vw;max-width:100vw;left:calc(50% - 50vw);margin:0;padding:0;background:#a30c25;color:#fff;' +
         'font:700 15px/1.3 "Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-align:left;z-index:5}' +
       '#n9-nav *{box-sizing:border-box;margin:0;padding:0}' +
+      '[data-n9-bedingt][hidden]{display:none!important}' +
       '#n9-nav .n9n-wrap{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:56px}' +
       '#n9-nav a{color:#fff;text-decoration:none}' +
       '#n9-nav .n9n-marke{font-size:18px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;display:flex;align-items:baseline;gap:10px}' +
