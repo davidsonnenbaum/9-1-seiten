@@ -1,0 +1,212 @@
+<!-- 9-1.at · Leitfäden · Seite /leitfaeden
+     Jeder Leitfaden ist eine <section class="l-guide"> mit eigener id (Sprungziel, z. B. /leitfaeden#moderation).
+     Neuer Leitfaden: Kachel oben auf "bereit" setzen (Klasse "bald" entfernen, Link auf #id) und Abschnitt unten ergänzen. -->
+<div id="n9l" lang="de">
+<style>
+body{overflow-x:clip}
+#n9l{--rot:#c8102e;--rot-dunkel:#a30c25;--rosa:#fdf0f2;--tinte:#1b1b1b;--grau:#5c5c5c;--papier:#faf7f4;--linie:#e3dbd5;--sonne:#fff6d6;
+  position:relative!important;width:100vw!important;max-width:100vw!important;left:calc(50% - 50vw)!important;right:auto!important;margin:0!important;padding:0!important;
+  font-family:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--tinte);background:var(--papier);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;text-align:left}
+#n9l *{box-sizing:border-box}
+#n9l h1,#n9l h2,#n9l h3,#n9l p,#n9l ul,#n9l ol{margin:0;padding:0;border:0;font-family:inherit}
+#n9l a{color:var(--rot)}
+#n9l .l-wrap{max-width:820px;margin:0 auto;padding:0 24px}
+
+#n9l .l-hero{background:var(--rot);color:#fff;padding:52px 0 56px}
+#n9l .l-eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-bottom:10px}
+#n9l h1{font-size:clamp(34px,5vw,54px);line-height:1.05;font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:16px}
+#n9l .l-lead{font-size:19px;max-width:640px}
+
+#n9l .l-uebersicht{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:36px 0 0}
+#n9l .l-kachel{display:block;background:#fff;border:1px solid var(--linie);border-top:4px solid var(--rot);border-radius:8px;padding:20px 20px 18px;text-decoration:none;color:var(--tinte)}
+#n9l a.l-kachel:hover,#n9l a.l-kachel:focus-visible{box-shadow:0 4px 18px rgba(0,0,0,.08);outline:none}
+#n9l .l-kachel b{display:block;font-size:19px;line-height:1.25;font-weight:800;margin-bottom:6px}
+#n9l .l-kachel span{display:block;font-size:15px;line-height:1.45;color:var(--grau)}
+#n9l .l-kachel em{display:inline-block;margin-top:12px;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--rot)}
+#n9l .l-kachel.bald{border-top-color:var(--linie);opacity:.75}
+#n9l .l-kachel.bald em{color:var(--grau)}
+
+#n9l .l-guide{background:#fff;border:1px solid var(--linie);border-radius:8px;padding:36px 36px 32px;margin:40px 0 0;scroll-margin-top:16px}
+#n9l .l-guide h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+#n9l .l-unter{font-size:18px;color:var(--grau);margin-bottom:22px}
+#n9l .l-guide h3{font-size:21px;line-height:1.3;font-weight:800;margin:32px 0 10px}
+#n9l .l-guide p{margin-bottom:14px}
+#n9l .l-guide ul{margin:0 0 14px 22px}
+#n9l .l-guide li{margin-bottom:8px}
+
+#n9l .l-frage{background:var(--sonne);border:1px solid #f4d9a8;border-radius:8px;padding:20px 22px;margin:18px 0 6px;font-size:clamp(19px,2.3vw,23px);line-height:1.35;font-weight:800;text-align:center}
+#n9l .l-frage small{display:block;font-size:14px;font-weight:700;color:var(--grau);margin-bottom:4px;letter-spacing:.03em}
+
+#n9l .l-schritte{list-style:none;margin:8px 0 0;padding:0;counter-reset:s}
+#n9l .l-schritte li{counter-increment:s;position:relative;padding:14px 0 14px 58px;border-bottom:1px solid var(--linie);margin:0}
+#n9l .l-schritte li:last-child{border-bottom:0}
+#n9l .l-schritte li::before{content:counter(s);position:absolute;left:0;top:12px;width:40px;height:40px;border-radius:50%;background:var(--rosa);color:var(--rot);font-weight:800;font-size:19px;line-height:40px;text-align:center}
+#n9l .l-schritte b{display:block;font-size:18px;margin-bottom:2px}
+
+#n9l .l-dialog{background:var(--papier);border-left:4px solid var(--rot);border-radius:0 8px 8px 0;padding:18px 22px;margin:14px 0 18px;font-size:16px}
+#n9l .l-dialog p{margin-bottom:10px}
+#n9l .l-dialog p:last-child{margin-bottom:0}
+#n9l .l-dialog .l-mod{color:var(--rot-dunkel)}
+#n9l .l-dialog i{color:var(--grau)}
+#n9l .l-tafel{background:#fff;border:2px dashed var(--rot);border-radius:6px;padding:12px 16px;font-weight:800;text-align:center;margin:12px 0}
+
+#n9l .l-knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+#n9l .l-btn{display:inline-block;background:var(--rot);color:#fff;font-weight:800;text-decoration:none;padding:13px 20px;border-radius:6px;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+#n9l .l-btn:hover,#n9l .l-btn:focus-visible{background:var(--rot-dunkel);outline:none}
+#n9l .l-btn.hell{background:#fff;color:var(--rot);border:2px solid var(--rot)}
+#n9l .l-btn.hell:hover{background:var(--rosa)}
+
+#n9l .l-training{background:linear-gradient(135deg,#fff6d6 0%,#ffe9d9 55%,#fde2e6 100%);border:1px solid #f4d9a8;border-radius:8px;padding:22px 24px;margin-top:30px}
+#n9l .l-training b{display:block;font-size:19px;margin-bottom:6px;color:var(--rot)}
+#n9l .l-training p{margin:0}
+
+#n9l .m-titel{display:flex;gap:24px;align-items:stretch;margin-bottom:22px}
+#n9l .m-titel>div{flex:1 1 0}
+#n9l .m-eyebrow{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--rot);margin-bottom:6px}
+#n9l .m-zitat{flex:0 0 280px;margin:0;background:var(--rot);color:#fff;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+#n9l .m-zitat blockquote{margin:0;font-style:italic;font-size:15px;line-height:1.45}
+#n9l .m-zitat figcaption{font-size:13px;font-weight:700;text-align:right}
+#n9l .m-zitat figcaption::before{content:"– "}
+#n9l .m-download{display:flex;gap:20px;align-items:center;background:var(--sonne);border:1px solid #f4d9a8;border-radius:10px;padding:16px 18px;margin:4px 0 8px}
+#n9l .m-vorschau{flex:0 0 auto;display:block;line-height:0}
+#n9l .m-vorschau img{width:112px;height:auto;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.15);background:#fff}
+#n9l .m-download b{display:block;font-size:18px;margin-bottom:4px}
+#n9l .m-download p{margin-bottom:12px;font-size:16px}
+#n9l .m-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#n9l .m-karte{background:#fff;border:1px solid var(--linie);border-radius:12px;padding:12px 14px}
+#n9l .m-karte.stark{border:2px solid var(--rot)}
+#n9l .m-kopf{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+#n9l .m-nr{width:28px;height:28px;border-radius:50%;background:var(--rot);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+#n9l .m-emo{font-size:24px;line-height:1}
+#n9l .m-karte h4{margin:0 0 4px;font-size:17px;line-height:1.25;font-weight:800}
+#n9l .m-karte p,#n9l .m-tipp p{margin:0;font-size:15px;line-height:1.45}
+#n9l .m-tipp{background:#fff;border:1px solid var(--linie);border-radius:10px;padding:12px 14px;display:flex;gap:10px}
+#n9l .m-tipp b{display:block;font-size:16px;margin-bottom:2px}
+#n9l .m-tipp.rot{background:var(--rot);color:#fff;border-color:var(--rot)}
+#n9l .m-einleitung{display:flex;gap:14px;align-items:flex-start;background:var(--rosa);border:1px solid #f1c7cf;border-radius:12px;padding:16px 18px;margin:20px 0 4px}
+#n9l .m-einleitung b{display:block;color:var(--rot-dunkel);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+#n9l .m-einleitung p{margin:0;font-style:italic}
+#n9l .m-beispiel{border:1px solid var(--linie);border-radius:10px;margin-top:28px;background:#fff}
+#n9l .m-beispiel summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:19px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:12px}
+#n9l .m-beispiel summary::-webkit-details-marker{display:none}
+#n9l .m-beispiel summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--rosa);color:var(--rot);font-size:22px;line-height:30px;text-align:center}
+#n9l .m-beispiel[open] summary::after{content:"–"}
+#n9l .m-beispiel-inhalt{padding:0 20px 20px;font-size:16px}
+#n9l .m-beispiel-inhalt p{margin:0 0 8px}
+#n9l .m-hinweis{color:var(--grau);font-size:15px}
+#n9l .m-gelb{background:#fff1a8;padding:0 4px;border-radius:3px;color:var(--tinte);font-weight:700}
+#n9l .m-sec{color:var(--rot);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-top:16px!important}
+#n9l .m-lena b,#n9l .m-rot{color:var(--rot-dunkel)}
+#n9l .m-grau{color:var(--grau)}
+#n9l .m-key{background:#fff1a8;border:1px solid #e9d36a;border-radius:8px;padding:8px 12px}
+#n9l .m-key b{color:var(--rot-dunkel)}
+#n9l .m-flip{border:2px solid var(--tinte);border-radius:6px;padding:6px 12px;font-weight:700}
+#n9l .m-ideen{list-style:none;margin:6px 0 10px!important;padding:10px 14px;background:#edf7ee;border:1px solid #a9d3ad;border-radius:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+#n9l .m-ideen li{margin:0}
+#n9l .m-fazit{background:var(--rosa);border:1px solid #f1c7cf;border-radius:10px;padding:12px 14px;margin-top:12px!important}
+@media (max-width:760px){#n9l .m-raster{grid-template-columns:1fr 1fr}#n9l .m-titel{flex-direction:column}#n9l .m-zitat{flex-basis:auto}}
+@media (max-width:520px){#n9l .m-raster,#n9l .m-ideen{grid-template-columns:1fr}#n9l .m-download{flex-direction:column;align-items:flex-start}}
+#n9l .l-inhalt{padding:0 0 72px}
+#n9l .fuss{background:var(--tinte);color:#ddd;padding:28px 0;font-size:14px}
+#n9l .fuss .l-wrap{max-width:1200px}
+#n9l .fuss a{color:#fff}
+#n9l .soz{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;vertical-align:middle}#n9l .soz svg{width:15px;height:15px;flex:none}
+@media (max-width:700px){#n9l .l-uebersicht{grid-template-columns:1fr}}
+@media (max-width:560px){#n9l .l-wrap{padding:0 16px}#n9l .l-guide{padding:26px 20px 24px}#n9l .l-schritte li{padding-left:52px}}
+@media print{
+  #n9-nav,#n9l .l-hero,#n9l .l-uebersicht,#n9l .m-download,#n9l .fuss{display:none!important}
+  #n9l .m-beispiel-inhalt{display:block!important}
+  #n9l{background:#fff;font-size:12pt}
+  #n9l .l-guide{border:0;padding:0;margin:0}
+  #n9l .l-schritte li{break-inside:avoid}
+}
+</style>
+
+<section class="l-hero"><div class="l-wrap">
+  <p class="l-eyebrow">Bewegung 9. Jänner</p>
+  <h1>Leitfäden</h1>
+  <p class="l-lead">Alles, was du brauchst, um selbst etwas zu bewegen. Einfach erklärt, zum Lesen, Herunterladen und Weitergeben.</p>
+</div></section>
+
+<div class="l-inhalt"><div class="l-wrap">
+
+  <div class="l-uebersicht">
+    <a class="l-kachel" href="#moderation"><b>Moderations-Guide</b><span>Wie du eine Runde moderierst, in der Menschen mit verschiedenen Meinungen Gemeinsamkeiten und Lösungen finden. Auch als PDF.</span><em>Jetzt lesen →</em></a>
+    <div class="l-kachel bald"><b>Ein Event organisieren</b><span>Von der Idee bis zum 9. Jänner: was du brauchst, wen du fragst, worauf du achtest.</span><em>Kommt bald</em></div>
+    <div class="l-kachel bald"><b>Eine Versammlung anmelden</b><span>Wie du eine Versammlung bei der Behörde anzeigst, Schritt für Schritt.</span><em>Kommt bald</em></div>
+  </div>
+
+  <section class="l-guide" id="moderation">
+    <div class="m-titel">
+      <div>
+        <p class="m-eyebrow">Moderations-Guide</p>
+        <h2>Gemeinsamkeiten finden</h2>
+        <p class="l-unter">Zuhören. Zusammenfassen. Gemeinsamkeiten finden.</p>
+      </div>
+      <figure class="m-zitat"><blockquote>„Die eigentliche Kunst des Zuhörens besteht nicht nur darin, zu verstehen, was gesagt wird, sondern auch das zu hören, was nicht gesagt wird.“</blockquote><figcaption>Vera F. Birkenbihl</figcaption></figure>
+    </div>
+
+    <div class="m-download">
+      <a href="https://davidsonnenbaum.github.io/9-1-seiten/downloads/moderations-guide.pdf" target="_blank" rel="noopener" class="m-vorschau"><img src="https://davidsonnenbaum.github.io/9-1-seiten/downloads/moderations-guide-vorschau.png" alt="Vorschau der ersten Seite des Moderations-Guides" width="223" height="315" loading="lazy"></a>
+      <div>
+        <b>Zum Ausdrucken und Mitnehmen</b>
+        <p>Der ganze Guide auf zwei A4-Seiten: der Ablauf einer Runde, Tipps für die Moderation und ein Übungsbeispiel zum Nachlesen.</p>
+        <a class="l-btn" href="https://davidsonnenbaum.github.io/9-1-seiten/downloads/moderations-guide.pdf" download="Moderations-Guide-9-1.pdf">PDF herunterladen</a>
+      </div>
+    </div>
+
+    <h3>So läuft eine Runde ab</h3>
+    <div class="m-raster"><div class="m-karte"><div class="m-kopf"><span class="m-nr">1</span><span class="m-emo" aria-hidden="true">🌿</span></div><h4>Der Raum</h4><p>Ruhig und angenehm. Alle sitzen im Kreis oder Halbkreis. In der Mitte ein Symbol, etwa eine Blume, das Fokus schafft.</p></div><div class="m-karte"><div class="m-kopf"><span class="m-nr">2</span><span class="m-emo" aria-hidden="true">📋</span></div><h4>Das Flipchart</h4><p>Ein Flipchart oder großes Blatt, gut sichtbar für alle. Hier hält die Moderation die Gemeinsamkeiten der Runde fest.</p></div><div class="m-karte"><div class="m-kopf"><span class="m-nr">3</span><span class="m-emo" aria-hidden="true">💬</span></div><h4>Das Briefing</h4><p>Die Moderation erklärt, worum es geht: ein sicherer Raum, in dem alle gehört werden (siehe unten).</p></div><div class="m-karte"><div class="m-kopf"><span class="m-nr">4</span><span class="m-emo" aria-hidden="true">👂</span></div><h4>Zuhören, Mensch für Mensch</h4><p>Eine Person spricht. Neugierig nachfragen, einfach zusammenfassen, Gemeinsamkeit ableiten und in die Runde fragen: Passt das für alle? Dann die nächste Person.</p></div><div class="m-karte stark"><div class="m-kopf"><span class="m-nr">5</span><span class="m-emo" aria-hidden="true">💡</span></div><h4>Lösungen, die für alle funktionieren</h4><p>Erst wenn Frust und Wut raus sind und mehrere Gemeinsamkeiten auf dem Flipchart stehen, geht es um Lösungen. Die Ideen kommen aus der Runde, und genau hier entsteht die Stärke zusammenführender Moderation.</p></div><div class="m-karte"><div class="m-kopf"><span class="m-nr">6</span><span class="m-emo" aria-hidden="true">🪶</span></div><h4>Abschlussrunde</h4><p>Alle kommen der Reihe nach dran, so auch die Stillen. Wer noch etwas sagen möchte, sagt es jetzt. Wer nicht, gibt einfach weiter.</p></div></div>
+
+    <div class="m-einleitung">
+      <span class="m-emo" aria-hidden="true">⚓</span>
+      <div><b>Die Einleitung</b><p>„Hier ist ein Raum, in dem du gehört wirst. Du kannst ohne Angst sagen, was wirklich in dir ist, auch mit deinen Gefühlen, auch wenn du mal Dampf ablassen musst. Niemand wird hier in eine Schublade gesteckt. Eine Person spricht, und ich höre dir zu. Ich bin bei dir, ich bin euer sicherer Hafen. Ich fasse zusammen, was du sagst, damit alle es verstehen, und frage dann in die Runde, ob wir darin eine Gemeinsamkeit finden.“</p></div>
+    </div>
+
+    <h3>Tipps für die Moderation</h3>
+    <div class="m-raster"><div class="m-tipp"><span class="m-emo" aria-hidden="true">⚓</span><div><b>Sicherer Hafen sein</b><p>„Ich bin jetzt bei dir. Ich höre dir zu.“ Aufrecht, zugewandt, ganz da: Du hältst den Raum, nicht die Lautesten.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">🪑</span><div><b>Halbkreis oder Linie</b><p>Bei aufgeladenen Themen sitzt niemand direkt gegenüber. Alle schauen zu dir und zum Flipchart, nicht aufeinander.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">↔️</span><div><b>Angenehmen Abstand halten</b><p>Nah genug für Verbindung, weit genug, dass sich niemand bedrängt fühlt.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">🌊</span><div><b>Emotionen Raum geben</b><p>Beobachte, was sich zeigt, und lass es raus (Purging). Gefühle sind kein Störfall, sie gehören dazu.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">🔍</span><div><b>Neugierig nachfragen</b><p>„Warum ist das so? Wie fühlt sich das für dich an?“ Versteh den Menschen aus dem Innersten, dann fass es einfach für alle zusammen.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">⏳</span><div><b>Beim Schreiben warten lassen</b><p>Sag kurz an: „Einen Moment, ich schreib das mit.“ So weiß die Runde, dass es gleich weitergeht.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">💧</span><div><b>Sickern lassen</b><p>Nach dem Aufschreiben kurz innehalten. Stille ist erlaubt, oft kommt danach das Wichtigste.</p></div></div><div class="m-tipp"><span class="m-emo" aria-hidden="true">🛑</span><div><b>Dazwischengehen</b><p>Gehen zwei verbal aufeinander los: einschreiten und mit deinem Körper die Sicht zwischen ihnen blockieren.</p></div></div><div class="m-tipp rot"><span class="m-emo" aria-hidden="true">👀</span><div><b>„Schau mich an und sag es mir.“</b><p>Ganz wichtig bei emotionalen Höhen: Hol den Blick zu dir, weg vom Gegenüber.</p></div></div></div>
+
+    <details class="m-beispiel">
+      <summary>So klingt eine Runde: ein Übungsbeispiel</summary>
+      <div class="m-beispiel-inhalt">
+        <p class="m-hinweis">Übungsbeispiel Corona-Impfung · Moderatorin Lena, Maria (für die Impfung), Gerhard (skeptisch). <span class="m-gelb">Gelb markiert</span> = der Schlüssel: Hier spricht Lena die Gemeinsamkeit aus und fragt nach Einwänden.</p>
+        <p class="m-sec">① Anliegen hören</p>
+        <p><b>Gerhard:</b> Man hat uns belogen! Keiner weiß, was in diesen Impfungen drin ist, und die Pharmakonzerne verdienen Milliarden.</p>
+        <p class="m-lena"><b>Lena:</b> Gerhard, ist dir wichtig, dass es wirklich um die Gesundheit der Menschen geht und nicht um Profit?</p>
+        <p><b>Gerhard:</b> Genau. Um Ehrlichkeit und Transparenz.</p>
+        <p><b>Maria:</b> Aber ohne Impfung stecken sich Menschen an, gerade die Schwachen!</p>
+        <p class="m-lena"><b>Lena:</b> Maria, dir ist wichtig, dass niemand gefährdet wird, besonders die Verletzlichen? <b class="m-grau">Maria:</b> Ja, darum geht es mir.</p>
+        <p class="m-key"><b>🔑 Gemeinsamkeit · Lena:</b> Ich höre hier eine Gemeinsamkeit: Wir wollen, dass die Gesundheit aller geschützt wird und dass alles, was dafür eingesetzt wird, vollkommen transparent und unabhängig von Konzerninteressen geprüft wird. Spürt hier jemand noch einen starken Einwand oder einen Widerstand?</p>
+        <p><b>Maria:</b> Nein, das passt für mich. <b>Gerhard:</b> Kein Widerstand.</p>
+        <p class="m-flip">📋 Gesundheit aller schützen, mit voller Transparenz und unabhängiger Prüfung.</p>
+        <p class="m-sec">② Wenn es hitzig wird</p>
+        <p><b>Gerhard:</b> Ehrlich gesagt: Wenn von 1000 Menschen fünf sterben, dann ist das eben so. Das gehört zum Leben dazu.</p>
+        <p><b>Maria:</b> Wie bitte? Meine Mutter ist 82. Soll ich sagen, Pech gehabt, wenn sie zu den fünf gehört?</p>
+        <p class="m-lena"><b>Lena:</b> Moment, ich möchte euch beide verstehen. Gerhard, geht es dir darum, dass wir den Tod nicht tabuisieren?</p>
+        <p><b>Gerhard:</b> Ja. Wir tun so, als dürfte niemand mehr sterben. Diese Angst hat uns mehr geschadet als geholfen.</p>
+        <p class="m-lena"><b>Lena:</b> Danke. Maria, wie geht es dir gerade?</p>
+        <p><b>Maria:</b> Ich bin aufgewühlt. Ich habe Angst um meine Mutter. Ich will, dass sie zählt, auch wenn sie alt ist.</p>
+        <p class="m-key"><b>🔑 Gemeinsamkeit · Lena:</b> Ich höre hier etwas, das euch beide verbindet: Wir wollen offen und ohne Angst über Krankheit und Tod sprechen können, und gleichzeitig jedes einzelne Leben wertschätzen und die Verletzlichen gut schützen. Spürt hier jemand noch einen starken Einwand oder einen Widerstand?</p>
+        <p><b>Gerhard:</b> Ein kleiner Widerstand. Schützen ja, aber nicht mit Zwang.</p>
+        <p class="m-key"><b>🔑 Einwand einbauen · Lena:</b> Danke, dir ist Freiheit wichtig. Ich ergänze: „… auf eine Weise, die die freie Entscheidung jedes Menschen achtet.“ Wie ist das für euch?</p>
+        <p><b>Gerhard:</b> So kann ich mitgehen. <b>Maria:</b> Ich auch.</p>
+        <p class="m-flip">📋 Offen und ohne Angst über Krankheit und Tod sprechen, jedes Leben wertschätzen und die Verletzlichen schützen, mit Achtung vor der freien Entscheidung.</p>
+        <p class="m-sec">③ Von den Gemeinsamkeiten zu den Lösungen</p>
+        <p class="m-lena"><b>Lena:</b> Schaut aufs Flipchart. Was könnte konkret passieren, damit diese Sätze Wirklichkeit werden?</p>
+        <p class="m-grau"><i>Die Ideen kommen von Maria und Gerhard selbst. Lena prüft jede mit der Einwandfrage.</i></p>
+        <ul class="m-ideen"><li>💡 Inhaltsstoffe und Studien verständlich öffentlich</li><li>💡 Gratis-Tests und gute Lüftung in Pflegeheimen</li><li>💡 Unabhängige Stelle für Nebenwirkungen</li><li>💡 Gesprächsabende über Krankheit, Sterben, Angst</li><li>💡 Mehr Geld für Vorbeugung</li></ul>
+        <p><b class="m-rot">Lena:</b> Was könnten wir schon morgen anpacken? <b>Maria:</b> Den ersten Gesprächsabend. <b>Gerhard:</b> Ich koch Suppe.</p>
+        <p class="m-fazit"><b>✨ Was hier passiert:</b> Lena streitet nie über Meinungen. Sie hört das Anliegen dahinter und spricht die Gemeinsamkeit aus. Erst danach kommen die Lösungen, aus der Runde. Deshalb tragen beide sie mit, obwohl sie beim Impfen ganz verschieden denken.</p>
+      </div>
+    </details>
+
+    <div class="l-training">
+      <b>Lieber gemeinsam üben?</b>
+      <p>Wir bieten regelmäßig Moderationstrainings an, in Wien jeden ersten Sonntag im Monat. Schreib uns, wenn du dabei sein willst: <a href="mailto:info@9-1.at">info@9-1.at</a></p>
+    </div>
+  </section>
+
+</div></div>
+
+<div class="fuss"><div class="l-wrap">#zamhalten · 9-1.at · <a href="https://www.instagram.com/9_1.at/" target="_blank" rel="noopener" class="soz"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg><span>Instagram</span></a> · <a href="/anliegen">Anliegen</a> · <a href="/karte">Karte</a> · <a href="/geschichten">Geschichten</a> · <a href="/leitfaeden">Leitfäden</a> · <a href="/faq">Wer wir sind &amp; FAQ</a> · <a href="/verhaltensregeln">Verhaltensregeln</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></div></div>
+</div>

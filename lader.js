@@ -14,6 +14,7 @@
     ['/anliegen', 'Die 9 Anliegen'],
     ['/karte', 'Karte'],
     ['/geschichten', 'Geschichten', 'geschichten'],
+    ['/leitfaeden', 'Leitfäden'],
     ['/faq', 'Wer wir sind & FAQ']
   ];
 
@@ -142,8 +143,8 @@
       '#n9-nav .n9n-knopf span,#n9-nav .n9n-knopf span::before,#n9-nav .n9n-knopf span::after{display:block;width:16px;height:2px;background:#fff;position:relative}' +
       '#n9-nav .n9n-knopf span::before,#n9-nav .n9n-knopf span::after{content:"";position:absolute;left:0}' +
       '#n9-nav .n9n-knopf span::before{top:-5px}#n9-nav .n9n-knopf span::after{top:5px}' +
-      '@media (max-width:1000px){#n9-nav .n9n-marke span{display:none}}' +
-      '@media (max-width:820px){' +
+      '@media (max-width:1180px){#n9-nav .n9n-marke span{display:none}}' +
+      '@media (max-width:960px){' +
         '#n9-nav .n9n-wrap{flex-wrap:wrap;padding:0 16px;gap:0}' +
         '#n9-nav .n9n-marke span{display:inline}' +
         '#n9-nav .n9n-knopf{display:inline-flex}' +

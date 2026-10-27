@@ -46,6 +46,16 @@ Neue WordPress-Seite mit dem Titel **„Wer wir sind & FAQ“** und der Adresse 
 <script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
 ```
 
+## Leitfäden
+
+Neue WordPress-Seite mit dem Titel **„Leitfäden“** und der Adresse (Permalink) **leitfaeden** anlegen.
+
+```html
+<p hidden aria-hidden="true">Leitfäden der Bewegung 9. Jänner: Moderations-Guide zum Lesen und als PDF. Bald auch: Events organisieren, Versammlungen anmelden.</p>
+<div data-n9-seite="leitfaeden" style="min-height:100vh"></div>
+<script src="https://davidsonnenbaum.github.io/9-1-seiten/lader.js" defer></script>
+```
+
 ## Impressum
 
 ```html
