@@ -37,12 +37,29 @@ body{overflow-x:clip}
 #n9f .f-schritte li::marker{color:var(--rot);font-weight:800}
 #n9f .f-schritte li{margin-bottom:6px}
 
+#n9f .f-abschnitt{font-size:clamp(26px,3.4vw,34px);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:56px 0 8px;color:var(--tinte)}
+#n9f .f-einleitung{font-size:18px;color:var(--grau);margin-bottom:8px}
+#n9f .f-zahlen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 6px}
+#n9f .f-zahl{background:#fff;border:1px solid var(--linie);border-top:4px solid var(--rot);border-radius:8px;padding:16px 16px 14px}
+#n9f .f-zahl b{display:block;font-size:30px;line-height:1.1;font-weight:800;color:var(--rot);letter-spacing:-.02em;margin-bottom:6px}
+#n9f .f-zahl span{display:block;font-size:14px;line-height:1.4;color:var(--grau)}
+#n9f .f-antwort h3{font-size:17px;font-weight:800;margin:18px 0 6px;font-family:inherit}
+#n9f .f-antwort h3:first-child{margin-top:0}
+#n9f .f-antwort ul{margin:0 0 14px 20px;padding:0}
+#n9f .f-antwort li{margin-bottom:8px}
+#n9f sup a{text-decoration:none;font-weight:700;font-size:12px;padding:0 1px}
+#n9f .f-quellen{font-size:14px;color:var(--grau);margin:22px 0 0;padding:18px 22px;background:#fff;border:1px solid var(--linie);border-radius:8px}
+#n9f .f-quellen b{display:block;color:var(--tinte);margin-bottom:6px}
+#n9f .f-quellen ol{margin:0 0 0 20px;padding:0}
+#n9f .f-quellen li{margin-bottom:6px;scroll-margin-top:16px}
+#n9f .f-quellen a{word-break:break-word}
 #n9f .f-kontakt{font-size:15px;color:var(--grau);margin-top:28px}
 
 #n9f .fuss{background:var(--tinte);color:#ddd;padding:28px 0;font-size:14px}
 #n9f .fuss .f-wrap{max-width:1200px}
 #n9f .fuss a{color:#fff}
 #n9f .soz{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;vertical-align:middle}#n9f .soz svg{width:15px;height:15px;flex:none}
+@media (max-width:640px){#n9f .f-zahlen{grid-template-columns:1fr}}
 @media (max-width:560px){#n9f .f-wrap{padding:0 16px}#n9f .f-frage summary{padding:18px 18px}#n9f .f-antwort{padding:0 18px 18px}#n9f .f-aufruf{padding:26px 20px}}
 </style>
 
@@ -69,6 +86,69 @@ body{overflow-x:clip}
       <p>Uns geht es um etwas anderes: Die Stimmen der Menschen aus dem Alltag sollen sichtbar werden und dort Gewicht bekommen, wo entschieden wird. Zum Beispiel in gelosten Menschenräten, in denen ganz normale Menschen gemeinsam Lösungen erarbeiten. Wir wollen nicht für andere sprechen, sondern dazu beitragen, dass Menschen wieder selbst mitgestalten.</p>
     </div>
   </details>
+
+  <h2 class="f-abschnitt" id="menschenraete">Warum geloste Menschenräte?</h2>
+  <p class="f-einleitung">Was passiert, wenn ganz normale Menschen zusammenkommen, einander wirklich zuhören und gemeinsam nach Lösungen suchen? Das ist kein Gedankenexperiment. Es passiert schon, an vielen Orten der Welt.</p>
+
+  <div class="f-zahlen">
+    <div class="f-zahl"><b>≈ 300</b><span>geloste Räte und Bürgerjurys hat die OECD bis 2019 weltweit gezählt<sup><a href="#q1">1</a></sup></span></div>
+    <div class="f-zahl"><b>99</b><span>geloste Menschen berieten in Irland über eine Frage, die das Land jahrzehntelang gespalten hatte<sup><a href="#q2">2</a></sup></span></div>
+    <div class="f-zahl"><b>seit 2019</b><span>gibt es in Ostbelgien einen dauerhaften gelosten Bürgerdialog<sup><a href="#q4">4</a></sup></span></div>
+  </div>
+
+  <details class="f-frage" id="was-ist-ein-menschenrat">
+    <summary>Was ist ein geloster Menschenrat?</summary>
+    <div class="f-antwort">
+      <p>Ein Menschenrat ist eine Art Mini-Österreich. Die Mitglieder werden zufällig ausgelost, so dass sie ungefähr so zusammengesetzt sind wie die Bevölkerung: jung und alt, Stadt und Land, mit ganz unterschiedlichen Berufen, Einkommen und Meinungen.</p>
+      <p>Fachleute mit verschiedenen Sichtweisen informieren die Gruppe. Dann beraten die Menschen über mehrere Treffen hinweg, begleitet von einer guten Moderation. Am Ende stehen Empfehlungen, hinter denen möglichst viele stehen können.</p>
+    </div>
+  </details>
+
+  <details class="f-frage" id="warum-gelost">
+    <summary>Warum gerade gelost?</summary>
+    <div class="f-antwort">
+      <p>Wer gelost wird, muss keine Wahl gewinnen, keiner Partei gefallen und keine Schlagzeile liefern. Das schafft Raum für etwas, das in der Politik oft fehlt: ehrliches Zuhören und die Bereitschaft, die eigene Meinung zu überdenken.</p>
+      <p>Und weil alle die Chance haben, gelost zu werden, sitzen dort Menschen, die sonst selten gefragt werden: die Pflegerin, der Lehrling, die Pensionistin vom Land. Genau ihre Erfahrungen aus dem Alltag machen die Lösungen gut.</p>
+    </div>
+  </details>
+
+  <details class="f-frage" id="beispiele">
+    <summary>Funktioniert das wirklich? Ein paar Beispiele</summary>
+    <div class="f-antwort">
+      <h3>Irland: Lösungen für Fragen, die festgefahren waren</h3>
+      <p>Irland hat zuerst von 2012 bis 2014 einen Verfassungskonvent mit gelosten Bürgerinnen und Bürgern eingesetzt, dann 2016 eine Bürgerversammlung mit 99 gelosten Menschen.<sup><a href="#q2">2</a></sup> Sie berieten über Fragen, bei denen die Politik seit Jahrzehnten nicht weiterkam, etwa die Ehe für gleichgeschlechtliche Paare und das Abtreibungsrecht. Ihre Empfehlungen kamen danach vor die ganze Bevölkerung: 2015 und 2018 nahmen die Menschen in Irland sie in Volksabstimmungen an, 2018 mit 66,4 Prozent.<sup><a href="#q2">2</a>,<a href="#q3">3</a></sup></p>
+
+      <h3>Ostbelgien: Bürgerinnen und Bürger reden dauerhaft mit</h3>
+      <p>Die Deutschsprachige Gemeinschaft Belgiens hat 2019 als erste Region Europas einen dauerhaften Bürgerdialog eingeführt. Ein geloster Bürgerrat wählt die Themen aus, geloste Bürgerversammlungen erarbeiten Empfehlungen.<sup><a href="#q4">4</a></sup> Das Parlament muss sich damit mehrmals öffentlich befassen und eine Ablehnung eigens begründen. Bisher ging es unter anderem um Pflege, Wohnen, Inklusion in der Schule, Digitalisierung und die Integration von Zugewanderten.<sup><a href="#q5">5</a></sup></p>
+
+      <h3>Vorarlberg: Bürgerräte stehen in der Landesverfassung</h3>
+      <p>Auch in Österreich gibt es Erfahrung damit. Vorarlberg hat 2013 in seiner Landesverfassung festgeschrieben, dass das Land neue Formen der Mitbestimmung fördert, allen voran zufällig ausgewählte Bürgerräte. Kärnten hat das 2017 übernommen.<sup><a href="#q6">6</a></sup></p>
+    </div>
+  </details>
+
+  <details class="f-frage" id="moderation">
+    <summary>Was hat Moderation damit zu tun?</summary>
+    <div class="f-antwort">
+      <p>Sehr viel. Wenn Menschen mit verschiedenen Meinungen nur Positionen austauschen, prallen sie aneinander ab. Eine gute Moderation fragt tiefer: <b>Was ist dir dabei wirklich wichtig?</b> Dort, bei den Bedürfnissen dahinter, finden sich erstaunlich oft Gemeinsamkeiten: Sicherheit, Fairness, ein gutes Leben für die eigenen Kinder.</p>
+      <p>Aus diesen Gemeinsamkeiten entstehen Lösungen, an die vorher niemand gedacht hat. Lösungen, die nicht ein fauler Kompromiss sind, sondern für alle funktionieren.</p>
+      <h3>Ein Beispiel aus Minnesota (USA)</h3>
+      <p>Beim Sorgerecht nach Trennungen standen sich in Minnesota Interessengruppen, Fachleute und Abgeordnete lange unversöhnlich gegenüber. Ab 2012 erarbeiteten sie in einem moderierten Prozess zuerst gemeinsame Grundsätze, die allen wichtig waren. Daraus entstand ein Gesetzesentwurf, den am Ende fast alle Beteiligten aus vollem Herzen mittragen konnten.<sup><a href="#q7">7</a>,<a href="#q8">8</a></sup> Die Methode dahinter heißt Convergent Facilitation, auf Deutsch etwa „zusammenführende Moderation“. Genau diese Moderation üben wir für unsere Versammlungen.</p>
+    </div>
+  </details>
+
+  <div class="f-quellen" id="quellen">
+    <b>Quellen</b>
+    <ol>
+      <li id="q1">OECD (2020): <a href="https://read.oecd-ilibrary.org/en/publications/innovative-citizen-participation-and-new-democratic-institutions_339306da-en/full-report.html" target="_blank" rel="noopener">Innovative Citizen Participation and New Democratic Institutions: Catching the Deliberative Wave</a> (289 ausgewertete Fälle von 1986 bis 2019)</li>
+      <li id="q2">Electoral Reform Society (2018): <a href="https://www.electoral-reform.org.uk/the-irish-abortion-referendum-how-a-citizens-assembly-helped-to-break-years-of-political-deadlock/" target="_blank" rel="noopener">How a Citizens’ Assembly helped to break years of political deadlock</a></li>
+      <li id="q3">The Irish Post (26.5.2018): <a href="https://www.irishpost.com/news/official-ireland-emphatically-votes-repeal-eighth-amendment-abortion-155267" target="_blank" rel="noopener">Offizielles Ergebnis der Volksabstimmung 2018</a></li>
+      <li id="q4">VRT News (26.2.2019): <a href="https://www.vrt.be/vrtnws/de/2019/02/26/premiere-in-europa-deutschsprachige-gemeinschaft-in-ostbelgien/" target="_blank" rel="noopener">Premiere in Europa: Bürgerdialog in Ostbelgien</a></li>
+      <li id="q5">Verfassungsblog: <a href="https://verfassungsblog.de/buergerraete_demokratie_belgien/" target="_blank" rel="noopener">Bürgerräte in Ostbelgien</a></li>
+      <li id="q6">Verfassungsblog: <a href="https://verfassungsblog.de/burgerrate_demokratie_osterreich/" target="_blank" rel="noopener">Bürgerräte in Österreich</a></li>
+      <li id="q7">Miki Kashtan (2016): <a href="https://pubs.lib.umn.edu/index.php/ijps/article/view/118" target="_blank" rel="noopener">A Blueprint for Collaborative Lawmaking</a>, Interdisciplinary Journal of Partnership Studies</li>
+      <li id="q8">IAALS (2014): <a href="https://iaals.du.edu/blog/collaborative-process-yields-dividends-family-law-minnesota" target="_blank" rel="noopener">Collaborative Process Yields Dividends for Family Law in Minnesota</a></li>
+    </ol>
+  </div>
 
   <section class="f-aufruf" id="geschichte">
     <h2>Erzähl uns deine Geschichte</h2>
